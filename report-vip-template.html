@@ -152,22 +152,4 @@
 <div style="margin-top: 10px;">
     REPORT TOTAL COUNT: <span id="counRow">${totalRows}</span>
   </div>
-<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script>
-  $(function() {
-    getDateNow();
-  });
-    function getDateNow()
-    {
-    var d = new Date();
-    var month = d.getMonth()+1;
-    var day = d.getDate();
-    var dateNow = (day ? '0' : '') + day + '/' +
-        (month ? '0' : '') + month + '/' +
-        d.getFullYear();
-    var timeNow = d.getHours() + ":" + d.getMinutes();
-    $("#report-date").text(dateNow);     
-        $("#report-time").text(timeNow);
-    }
-  </script>
 </div></body></html>
