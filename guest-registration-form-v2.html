@@ -125,6 +125,10 @@
 </head>
 <body>
 <!--     <center><img src="https://github.com/nttramy400/template_thymeleaf/blob/master/logo.png?raw=true" class="logo" /></center> -->
+<center><div class="logo">
+    <img src="${logo}" />
+    <div class="logo-title" th:text="${propertyName}">${propertyName}</div>
+</div></center>
 <h1>GUEST REGISTRATION FORM</h1>
 <div class="container">
     <div class="confirmation">Confirmation No. / <span class="sub">Mã đặt phòng</span>: <span class="no" th:text="${confirmationNumber}">${confirmationNumber}</span></div>
