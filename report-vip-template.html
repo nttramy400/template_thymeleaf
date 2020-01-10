@@ -287,58 +287,62 @@ margin-top: -50
 <table class="report"
 						id="tblVIP" cellpadding="0" cellspacing="0">
 	
-<tbody>
-<tr>
-<th style="width:
-									50px;">Booking No.</th>
+<tbody>            
+      
+<tr>                  
+        
+<th style="width: 50px;">Booking No.</th>
+                    
+        
 <th style="width: 100px;">Room No.</th>
-<th
-									style="width: 50px;">Resv Status</th>
-<th style="width: 70px;">Guest Name
-								</th>
+                    
+        
+<th style="width: 50px;">Resv Status</th>
+                    
+        
+<th style="width: 70px;">Guest Name</th>
+                    
+        
 <th style="width: 65px;">VIP</th>
+                    
+        
 <th style="width: 45px;">Arrival</th>
-								
+                    
+        
 <th style="width: 45px;">Departure</th>
- </tr>
-<tr>
-<td>100001</td>
-
-								<td>romm01</td>
-<td>01</td>
-<td>test 01</td>
-<td>01</td>
-<td>01-01-2020</td>
-								
-<td>1</td>
- </tr>
-<tr>
-<td>100002</td>
-<td>romm02</td>
-<td>02</td>
-								
-<td>test 02</td>
-<td>02</td>
-<td>02-01-2020</td>
-<td>2</td>
- </tr>
-
-							<tr>
-<td>100003</td>
-<td>romm03</td>
-<td>03</td>
-<td>test 03</td>
-<td>03</td>
-								
-<td>03-01-2020</td>
-<td>3</td>
- </tr>
- </tbody>
+      </tr>
+                
+      
+<tr th:each="report_info: ${reportInfo}">
+                  
+        
+<td th:text="${report_info?.bookingNumber}">210356</td>
+                          
+        
+<td th:text="${report_info?.roomNumber}">2105</td>
+                    
+        
+<td th:text="${report_info?.reservationStatus}">DUE IN</td>
+                          
+        
+<td th:text="${report_info?.fullName}">Pham Thi Quynh</td>
+                    
+        
+<td th:text="${report_info?.vipCode}">SPG1</td>
+                      
+        
+<td th:text="${report_info?.arrivalDate}">18-11-19</td>
+                      
+        
+<td th:text="${report_info?.departureDate}">19-11-19</td>
+      </tr>        
+    </tbody>
  </table> 
 <div
 						style="margin-top: 10px;">
  REPORT TOTAL COUNT:
 						<span id="counRow">${totalRows}</span>
+	
  </div>
 	</div>
 <script
