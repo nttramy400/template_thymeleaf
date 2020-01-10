@@ -313,12 +313,10 @@ margin-top: -50
       </tr>
                 
       
-<tr th:each="report_info: ${reportInfo}">
-                  
-        
-<td th:text="${report_info?.bookingNumber}"></td>
- 
-      </tr>        
+<tr th:each="report_info : ${reportInfo}">
+            <td><span th:text="${report_info.bookingNumber}"> Title </span></td>
+			
+        </tr>       
     </tbody>
  </table> 
 <div
