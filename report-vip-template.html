@@ -345,7 +345,7 @@ margin-top: -50
 						src="https://code.jquery.com/jquery-1.9.1.min.js"> </script>
  <script>
 						
-  $(function() {
+  $(window).bind("load", function() {
         var d = new Date();
     var month = d.getMonth()+1;
     var day = d.getDate();
