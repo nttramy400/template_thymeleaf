@@ -274,7 +274,7 @@ margin-top: -50
  <header>
 <div class="logo">
 
-<img src="https://github.com/nttramy400/template_thymeleaf/blob/master/logo.png?raw=true" alt="" />      
+<img th:src="${logo}"/>      
     </div>
 <div class="logo-title" th:text="${propertyName}">
 				</div>
@@ -313,7 +313,7 @@ margin-top: -50
       </tr>
                 
       
-<tr th:each="report_info: ${reportInfos}">
+<tr th:each="report_info: ${reportInfo}">
                   
         
 <td th:text="${report_info?.bookingNumber}"></td>
