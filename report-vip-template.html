@@ -279,8 +279,9 @@ margin-top: -50
 <div class="logo-title" th:text="${propertyName}">
 				</div>
 <h1 class="page-title" th:text="${reportName}"></h1>
-<div
-						class="report-date" id="report-date" th:text="${reportDateFormat}"></div> 
+<td class="report-date" id="report-date" th:text="${reportDateFormat}">
+                </td>
+
  </header>
 <div style="margin-top:20px">
 <div class="report-time" id="report-time">10:50</div>						
@@ -344,24 +345,7 @@ margin-top: -50
 	
  </div>
 	</div>
-<script
-						src="https://code.jquery.com/jquery-1.9.1.min.js"> </script>
- <script>
-						
-  $(function() {
-        var d = new Date();
-    var month = d.getMonth()+1;
-    var day = d.getDate();
-    var dateNow = (day ? '0' : '') + day + '/' +
-        (month ? '0' : '') + month + '/' +
-        d.getFullYear();
-    var timeNow = d.getHours() + ":" + d.getMinutes();
-    $("#report-date").text(dateNow);     
-        $("#report-time").text(timeNow);
 
-  });
-
-					</script>
 </div>
 </body>
 
