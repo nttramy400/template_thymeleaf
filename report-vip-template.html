@@ -341,7 +341,7 @@ margin-top: -50
 <div
 						style="margin-top: 10px;">
  REPORT TOTAL COUNT:
-						<span id="counRow">${totalRows}</span>
+						<span id="counRow">${report_info.size()}</span>
 	
  </div>
 	</div>
@@ -360,9 +360,6 @@ margin-top: -50
     $("#report-date").text(dateNow);     
         $("#report-time").text(timeNow);
 
-	
-	var rowCount = $('#tblVIP tr').length - 1;
-	$("#counRow").text(rowCount); 
   });
 
 					</script>
