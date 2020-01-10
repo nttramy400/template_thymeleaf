@@ -316,32 +316,31 @@ margin-top: -50
 <tr th:each="report_info: ${reportInfo}">
                   
         
-<td th:text="${report_info?.bookingNumber}">210356</td>
+<td th:text="${report_info?.bookingNumber}"></td>
                           
         
-<td th:text="${report_info?.roomNumber}">2105</td>
+<td th:text="${report_info?.roomNumber}"></td>
                     
         
-<td th:text="${report_info?.reservationStatus}">DUE IN</td>
+<td th:text="${report_info?.reservationStatus}"></td>
                           
         
-<td th:text="${report_info?.fullName}">Pham Thi Quynh</td>
+<td th:text="${report_info?.fullName}"></td>
                     
         
-<td th:text="${report_info?.vipCode}">SPG1</td>
+<td th:text="${report_info?.vipCode}"></td>
                       
         
-<td th:text="${report_info?.arrivalDate}">18-11-19</td>
+<td th:text="${report_info?.arrivalDate}"></td>
                       
         
-<td th:text="${report_info?.departureDate}">19-11-19</td>
+<td th:text="${report_info?.departureDate}"></td>
       </tr>        
     </tbody>
  </table> 
 <div
 						style="margin-top: 10px;">
- REPORT TOTAL COUNT:
-	<div id="counRow" th:text="${totalRows}">0</div>
+ REPORT TOTAL COUNT: <span id="counRow" th:text="${totalRows}"></span>
 	
  </div>
 	</div>
