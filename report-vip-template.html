@@ -279,13 +279,13 @@ margin-top: -50
 <div class="logo-title" th:text="${propertyName}">
 				</div>
 <h1 class="page-title" th:text="${reportName}"></h1>
-<td class="report-date" id="report-date" th:text="${#dates.format(reportDateFormat, 'dd-MMM-yyyy')}">
-                </td>
+<div class="report-date" id="report-date" th:text="${#dates.format(reportDateFormat, 'dd-MMM-yyyy')}">
+                </div>
 
  </header>
 <div style="margin-top:20px">
-	<td class="report-time" id="report-time" th:text="${#dates.format(reportDateFormat, 'HH:mm:ss')}">
-                </td>					
+	<div class="report-time" id="report-time" th:text="${#dates.format(reportDateFormat, 'HH:mm:ss')}">
+                </div>					
 <table class="report"
 						id="tblVIP" cellpadding="0" cellspacing="0">
 	
