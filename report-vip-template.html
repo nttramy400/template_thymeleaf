@@ -345,11 +345,7 @@ margin-top: -50
  <script>
 						
   $(function() {
-    getDateNow();
-  });
-    function getDateNow()
-    {
-    var d = new Date();
+        var d = new Date();
     var month = d.getMonth()+1;
     var day = d.getDate();
     var dateNow = (day ? '0' : '') + day + '/' +
@@ -358,8 +354,12 @@ margin-top: -50
     var timeNow = d.getHours() + ":" + d.getMinutes();
     $("#report-date").text(dateNow);     
         $("#report-time").text(timeNow);
-    }
-  
+
+	
+	var rowCount = $('#tblVIP tr').length - 1;
+	$("#counRow").text(rowCount); 
+  });
+
 					</script>
 </div>
 </body>
