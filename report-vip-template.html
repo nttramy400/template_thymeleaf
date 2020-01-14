@@ -6,7 +6,8 @@
 
  <head>
 
-<meta charset="utf-8" />
+ <meta charset="UTF-8" />
+
 <title>VIP</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -278,13 +279,13 @@ margin-top: -50	;
 <div class="logo-title" th:text="${propertyName}">
 				</div>
 <h1 class="page-title" th:text="${reportName}"></h1>
-<div class="report-date" id="report-date" th:text="${#dates.format(reportDateFormat, 'dd-MMM-yyyy')}">
+<div class="report-date" id="report-date" th:text="${#dates.format(reportDateFormat, 'dd.MM.yyyy')}">
                 </div>
 
  </header>
 <div style="margin-top:20px">
 	<div class="report-time" id="report-time" th:text="${#dates.format(reportDateFormat, 'HH:mm:ss')}">
-                </div>					
+               ${#dates.format(reportDateFormat, 'dd.MM.yyyy')} </div>					
 <table class="report"
 						id="tblVIP" cellpadding="0" cellspacing="0">
 	
