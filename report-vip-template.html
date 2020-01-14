@@ -290,8 +290,8 @@ font-family: 'IBM Plex Sans', sans-serif;
 <div class="logo-title" th:text="${propertyName}">
 				</div>
 <h1 class="page-title" th:text="${reportName}"></h1>
-<div class="report-date" id="report-date" th:text="${#dates.format(reportDateFormat, 'dd MMMM yyyy')}">
-               ${#dates.format(reportDateFormat, 'dd MMMM yyyy')} </div>
+<div class="report-date" id="report-date" th:text="${#dates.format(reportDateFormat, 'dd/MM/yyyy')}">
+ </div>
 
  </header>
 <div style="margin-top:20px">
