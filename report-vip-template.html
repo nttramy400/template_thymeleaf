@@ -1,364 +1,181 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
- <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
- <head>
-
- <meta charset="UTF-8" />
-
-<title>VIP</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1" />
- <style>
-	@font-face {
-
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @font-face {
             font-family: 'IBM Plex Sans';
-
             font-weight: normal;
-
             font-style: normal;
-
             src: url(https://raw.githubusercontent.com/IBM/plex/master/IBM-Plex-Sans/fonts/complete/ttf/IBMPlexSans-Light.ttf);
-
         }
- html,
-	body {
-		
- font-size: 10px;
-		
- font-family: 'IBM Plex Sans', sans-serif;
-		
- color: #3E4345;
-		
-
-	}
-
-	
- .container {
-		
- display: flex;
-		
- flex-direction: column;
-		
- min-height: 90vh;
-		
- padding: 3em;
-		
-
-	}
-
-	
- header {
-		
- display: flex;
-		
- flex-shrink: 0;
-		
- margin-bottom: 50em;
-		
- flex-direction: column;
-		
-
-	}
-
-	
- header img {
-		
- width: 8.9em;
-		
- height: 5.6em;
-		
- display: block;
-		
- margin-bottom: 0.7em;
-		
-
-	}
-
-	
- .page-title {
-		
-		
- font-family: 'IBM Plex Sans', serif;
-		
- color: #000000;
-		
- text-transform: uppercase;
-		
- font-size: 16px;
-		
- margin-bottom: -3px;
-		
- margin-top: -50px;
-		
- text-align: center;
-		
-
-	}
-
-	
- header .report-date {
-		
-		
- font-family: 'Playfair Display', serif;
-		
- color: #000000;
-		
- font-size: 10px;
-		
- margin-bottom: -3px;
-		
-margin-top: -50	;	
- margin-right: 5px;
-		
- text-align: right;
-		
-
-	}
-
-	
- .report-time {	
-		
- font-family: 'IBM Plex Sans', serif;
-		
- color: #000000;
-		
- font-size: 10px;
-		
- margin-bottom: 5px;
-		
- margin-right: 5px;
-		
- text-align: right;
-		
-
-	}
-
-	
- .logo-title {
-font-family: 'IBM Plex Sans', sans-serif;		
- color: #2B3A8B;
-		
- font-weight: bold;
-		
- font-size: 12px;
-	 text-transform: uppercase;
-		
-
-	}
-
-	
- footer {
-		
- flex-shrink: 0;
-		
- text-align: center;
-		
-
-	}
-
-	
- footer .page-number {
-		
- color: #919699;
-		
- font-style: normal;
-		
- font-weight: 500;
-		
- font-size: 12px;
-		
-
-	}
-
-	
- main {
-		
- flex: 1 0 auto;
-		
-
-	}
-
-	
- main .report-info {
-		
- margin: 2.1em 0;
-		
- display: flex;
-		
- justify-content: space-between;
-		
-
-	}
-
-	
- table {
-		
- border-collapse: collapse;
-		
- width: 100%;
-		
- table-layout: fixed;		
-
-	}
-
-	
- table,
-	td {
-		
- border: 0.01em solid #C6CACC;
-		
-
-	}
-
-	
- td {
-		
- border-bottom: none;
-		
-
-	}
-
-	
- th,
-	td {
-		
- padding: 0.85em;
-		
- font-style: normal;
-		
- font-weight: normal;
-		
-
-	}
-
-	
- th {
-		
- text-align: left;
-		
- font-weight: bold;
-		
-
-	}
-
-	
- td {
-		
- vertical-align: baseline;
-		
- word-wrap: break-word;
-		
-
-	}
-
-	
- th {
-		
- border: 0.01em solid #5E6366;
-		
-
-	}
-
-	
- .ellipsis {
-		
- text-overflow: ellipsis;
-		
- overflow: hidden;
-		
- white-space: nowrap;
-		
-
-	}
-
-	
-
-</style>
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            font-weight: bold;
+            font-style: normal;
+            src: url(https://raw.githubusercontent.com/IBM/plex/master/IBM-Plex-Sans/fonts/complete/ttf/IBMPlexSans-Bold.ttf);
+        }
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: normal;
+            font-style: normal;
+            src: url(http://themes.googleusercontent.com/static/fonts/playfairdisplay/v7/2NBgzUtEeyB-Xtpr9bm1Cczai8e7xzqnKiVb1EwOy0E.ttf);
+        }
+        @page {
+            margin: 20px;
+            margin-bottom: 30px;
+            size: A4 landscape;
+            font-family: 'IBM Plex Sans', sans-serif;
+            @bottom-center {
+                font-family: 'IBM Plex Sans', sans-serif;
+                content: 'Page ' counter(page);
+                font-size: 12px;
+            }
+        }
+        html, body {
+            font-size: 10px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: #000000;
+        }
+        .container {
+            display: block;
+            min-height: 90vh;
+            padding: 1.5em 3em;
+        }
+        header {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        header img {
+            height: 6em;
+            display: block;
+            margin-bottom: 0.7em;
+        }
+        header .page-title {
+            margin: auto;
+            font-family: 'Playfair Display', serif;
+            color: #3E4345;
+            text-transform: uppercase;
+            font-size: 2.5em;
+            margin-bottom: -3px;
+            margin-top: -32px;
+            text-align: center;
+        }
+        .logo .logo-title {
+            color: #2B3A8B;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        footer {
+            text-align: center;
+        }
+        footer .page-number {
+            color: #919699;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+        }
+        main {
+            width: 100%;
+            height: 100%;
+        }
+        main .report-info {
+            margin: 3.3em 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            -fs-table-paginate: paginate;
+            page-break-inside: auto;
+        }
+        th, td {
+            padding: 0.85em;
+            font-style: normal;
+            font-weight: normal;
+        }
+        th {
+            text-align: left;
+            font-weight: bold;
+        }
+        tr {
+        page-break-inside: avoid;
+        page-break-after: auto
+       }
+       .tabletitle th {
+          text-align: left;
+          border-bottom: 1px solid #000;
+       }
+       table tbody > tr:nth-child(odd) {
+            background-color:#eee;
+        }
+    </style>
 </head>
-
-
 <body>
 <div class="container">
- <header>
-<div class="logo">
-
-<img th:src="${logo}"/>
-    </div>
-<div class="logo-title" th:text="${propertyName}">
-				</div>
-<h1 class="page-title" th:text="${reportName}"></h1>
-<div class="report-date" id="report-date" th:text="${reportDate}">
+    <header>
+        <div class="logo">
+            <div>
+                <div style="display: inline-block; width: 33.33%;">
+                    <div>
+                        <img th:src="${logo}"/>
+                        <span class="logo-title" th:text="${propertyName}">Tây Ninh</span>
+                    </div>
                 </div>
+                <div style="display: inline-block; width: 33.33%;">
+                    <h1 class="page-title">VIP LIST</h1>
+                </div>
+            </div>
+            <div>
+                <div >
+                    <div class="filter-date" style="background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
+      + ' - ' + ${toDateFormat}">
+                        Filter: 01/06/19 - 09/06/19
+                    </div>
 
- </header>
-<div style="margin-top:20px">
-	<div class="report-time" id="report-time" th:text="${reportTime}">
-              </div>					
-<table class="report"
-						id="tblVIP" cellpadding="0" cellspacing="0">
-	
-<tbody>            
-      
-<tr>                  
-        
-<th style="width: 50px;">Booking No.</th>
-                    
-        
-<th style="width: 100px;">Room No.</th>
-                    
-        
-<th style="width: 50px;">Resv Status</th>
-                    
-        
-<th style="width: 70px;">Guest Name</th>
-                    
-        
-<th style="width: 65px;">VIP</th>
-                    
-        
-<th style="width: 45px;">Arrival</th>
-                    
-        
-<th style="width: 45px;">Departure</th>
-      </tr>
-                
-      
-<tr th:each="report_info: ${reportInfo}">
-                  
-        
-<td th:text="${report_info?.bookingNumber}">${report_info?.bookingNumber}</td>
-                          
-        
-<td th:text="${report_info?.roomNumber}">${report_info?.roomNumber}</td>
-                    
-        
-<td th:text="${report_info?.reservationStatus}">${report_info?.reservationStatus}</td>
-                          
-        
-<td th:text="${report_info?.fullName}">${report_info?.fullName}</td>
-                    
-        
-<td th:text="${report_info?.vipLevel}">${report_info?.vipLevel}</td>
-                      
-        
-<td th:text="${report_info?.arrivalDate}">{report_info?.arrivalDate}</td>
-                      
-        
-<td th:text="${report_info?.departureDate}">${report_info?.departureDate}</td>
-      </tr>        
-    </tbody>
- </table> 
-<div
-						style="margin-top: 10px;">
- REPORT TOTAL COUNT: <span id="counRow" th:text="${totalRows}"></span>
-	
- </div>
-	</div>
-
+                    <div class="report-date" style="background-color: white;text-align: right;padding: 0px;border: none; float: right;" th:text="'Report Date: ' + ${reportDate}">
+                        Report Date: 12:00 - 09/06/19
+                    </div>
+                </div>
+				<div>
+					<div class="report-date" style="background-color: white;text-align: right;padding: 0px;border: none; float: right;" th:text="'Report Time: ' + ${reportTime}">
+                        Report Time: 12:00
+                    </div>
+				</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <table cellspacing="0" cellpadding="0">
+            <thead>
+            <tr class="tabletitle">
+                <th style="width: 150px">Booking No.</th>
+                <th style="width: 150px">Room No.</th>
+                <th style="width: 150px">Resv Status</th>
+                <th style="width: 300px">Guest Name</th>
+                <th style="width: 150px">VIP</th>
+                <th style="width: 250px">Arrival</th>
+                <th colspan="6" style="width: 300px">Departure</th>
+			</tr>
+            </thead>
+            <tbody>
+            <div th:remove="tag" th:each="report_info: ${reportInfo}">
+                <tr>
+                    <td th:text="${report_info?.bookingNumber}">bookingNumber</td>
+                    <td th:text="${report_info?.roomNumber}">roomNumber</td>
+                    <td th:text="${report_info?.reservationStatus}">reservationStatus</td>
+                    <td th:text="${report_info?.fullName}">fullName</td>
+                    <td th:text="${report_info?.vipLevel}">vipLevel</td>
+                    <td th:text="${report_info?.arrivalDate}">arrivalDate</td>
+                    <td colspan="6" th:text="${report_info?.departureDate}">departureDate </td>
+                </tr>
+            </div>
+            <tr>
+                <td style="text-align: left; font-weight: bold;">REPORT TOTAL COUNT:</td>
+                <td colspan="11" style="text-align: left; font-weight: bold;" th:text="${totalRows}">totalRows</td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
 </div>
 </body>
-
 </html>
