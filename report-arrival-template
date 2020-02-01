@@ -165,7 +165,7 @@
 			</tr>
 			<div th:remove="tag" th:each="report_info: ${reportInfo}">
 			<tr>
-				<th colspan="14" style="text-align: left; font-weight: bold;" th:text="${report_info.groupBy}+ ': ' + ${report_info.value}">GroupBy</th> 
+				
 			</tr>
             </thead>
             <tbody>
