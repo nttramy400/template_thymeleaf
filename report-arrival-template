@@ -170,21 +170,21 @@
             </thead>
             <tbody>
                 <tr>
-					<div th:each="row,rowStat : ${report_info.reservations}">
-						<td th:text="${rowStat?.roomNumber}">roomNumber</td>     
-						<td th:text="${rowStat?.nameVip}">name_vip</td>      
-						<td th:text="${rowStat?.confNo}">confNo</td>       
-						<td th:text="${rowStat?.name}">name</td>      
-						<td th:text="${rowStat?.vip}">vip</td>      
-						<td th:text="${rowStat?.nationality}">nationality</td>      
-						<td th:text="${rowStat?.companyTA}">company_TA</td>       
-						<td th:text="${rowStat?.eta}">eta</td>      
-						<td th:text="${rowStat?.etd}">etd</td>     
-						<td th:text="${rowStat?.roomType}">roomType</td>      
-						<td th:text="${rowStat?.adl}">Adl</td>      
-						<td th:text="${rowStat?.chl}">chl</td>     
-						<td th:text="${rowStat?.paymentMethod}">paymentMethod</td>     
-						<td th:text="${rowStat?.rateCode}">rateCode</td>	
+					<div th:each="arrivalInfo : ${report_info.lstArrivalReportList}">
+						<td th:text="${arrivalInfo?.roomNumber}">roomNumber</td>     
+						<td th:text="${arrivalInfo?.nameVip}">name_vip</td>      
+						<td th:text="${arrivalInfo?.confNo}">confNo</td>       
+						<td th:text="${arrivalInfo?.name}">name</td>      
+						<td th:text="${arrivalInfo?.vip}">vip</td>      
+						<td th:text="${arrivalInfo?.nationality}">nationality</td>      
+						<td th:text="${arrivalInfo?.companyTA}">company_TA</td>       
+						<td th:text="${arrivalInfo?.eta}">eta</td>      
+						<td th:text="${arrivalInfo?.etd}">etd</td>     
+						<td th:text="${arrivalInfo?.roomType}">roomType</td>      
+						<td th:text="${arrivalInfo?.adl}">Adl</td>      
+						<td th:text="${arrivalInfo?.chl}">chl</td>     
+						<td th:text="${arrivalInfo?.paymentMethod}">paymentMethod</td>     
+						<td th:text="${arrivalInfo?.rateCode}">rateCode</td>	
 					</div>					
                 </tr>
             </div>
