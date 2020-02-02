@@ -168,13 +168,16 @@
 
             </thead>
             <tbody>
-            <div th:object="${reportInfo}">
-		     <div th:each="arrivalReportList,i: ${reportInfo.lstArrivalReportList}">
-		   <tr>
-			<td th:field="${*{arrivalReportList[__${i.index}__].roomNumber}">roomNumber</td>      
-		    </tr>
+		    
+		    <fieldset th:each="field:${reportInfo}">
+  <tr th:each="facet:${field.lstArrivalReportList}">
+	  <td colspan="11" style="text-align: left; font-weight: bold;" th:text="*{fields[__${field.roomNumber}__]}">totalRows</td>
+	
+	  </tr>
+</fieldset>
+		    
+		    
 
-		    </div>
            
             <tr>
                 <td style="text-align: left; font-weight: bold;">REPORT TOTAL COUNT:</td>
