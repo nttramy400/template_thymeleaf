@@ -122,7 +122,7 @@
                     </div>
                 </div>
                 <div style="display: inline-block; width: 33.33%;">
-                    <h1 class="page-title">Arrival List</h1>
+                    <h1 class="page-title">Arrival LIST</h1>
                 </div>
             </div>
             <div>
@@ -137,8 +137,8 @@
                     </div>
                 </div>
 				<div>
-					<div class="report-date" style="background-color: white;text-align: right;padding: 0px;border: none; float: right;" th:text="'Report Time: ' + ${reportTime}">
-                        Report Time: 12:00
+					<div class="report-date" style="background-color: white;text-align: left;padding: 0px;border: none; float: right;" th:text="'Report Time: ' + ${reportTime}">
+                        Report Time1: 12:00
                     </div>
 				</div>
             </div>
@@ -148,8 +148,7 @@
         <table cellspacing="0" cellpadding="0">
             <thead>
             <tr class="tabletitle">
-		    
-               <th style="width: 50px;">Room No.</th>       
+                <th style="width: 50px;">Room No.</th>       
 						<th style="width: 50px;">Name/ VIP</th>       
 						<th style="width: 50px;">Conf. No.</th>
 						<th style="width: 70px;">Name</th>
@@ -164,27 +163,38 @@
 						<th style="width: 45px;">Payment Mth.</th>
 						<th style="width: 45px;">Rate Code</th>
 			</tr>
-		    
-
+			
             </thead>
             <tbody>
-		    
-		    <div th:each="field:${reportInfo}">
-  <tr th:each="facet:${field.lstArrivalReportList}">
-	  <td colspan="11" style="text-align: left; font-weight: bold;" th:text="${facet.roomNumber}">totalRows</td>
-	
-	  </tr>
-
-		 <div>    
-		    
-
-           
+                <tr>
+					<div th:remove="tag" th:each="report_info: ${reportInfo}">
+					<tr>
+						<th colspan="14" style="text-align: left; font-weight: bold;" th:text="${report_info.groupBy}+ ': ' + ${report_info.value}">GroupBy</th> 
+						<div th:each="arrivalInfo : ${report_info.lstArrivalReportList}">
+							<td th:text="${arrivalInfo.roomNumber}">roomNumber</td>     
+							<td th:text="${arrivalInfo.nameVip}">name_vip</td>      
+							<td th:text="${arrivalInfo.confNo}">confNo</td>       
+							<td th:text="${arrivalInfo.name}">name</td>      
+							<td th:text="${arrivalInfo.vip}">vip</td>      
+							<td th:text="${arrivalInfo.nationality}">nationality</td>      
+							<td th:text="${arrivalInfo.companyTA}">company_TA</td>       
+							<td th:text="${arrivalInfo.eta}">eta</td>      
+							<td th:text="${arrivalInfo.etd}">etd</td>     
+							<td th:text="${arrivalInfo.roomType}">roomType</td>      
+							<td th:text="${arrivalInfo.adl}">Adl</td>      
+							<td th:text="${arrivalInfo.chl}">chl</td>     
+							<td th:text="${arrivalInfo.paymentMethod}">paymentMethod</td>     
+							<td th:text="${arrivalInfo.rateCode}">rateCode</td>	
+						</div>	
+					</tr>
+									
+                </tr>
+            </div>
             <tr>
                 <td style="text-align: left; font-weight: bold;">REPORT TOTAL COUNT:</td>
-               <td colspan="11" style="text-align: left; font-weight: bold;" th:text="${totalRows}">totalRows</td>
+                <td colspan="11" style="text-align: left; font-weight: bold;" th:text="${totalRows}">totalRows</td>
             </tr>
             </tbody>
-		   
         </table>
     </main>
 </div>
