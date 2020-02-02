@@ -171,7 +171,7 @@
 		    
 		    <fieldset th:each="field:${reportInfo}">
   <tr th:each="facet:${field.lstArrivalReportList}">
-	  <td colspan="11" style="text-align: left; font-weight: bold;" th:text="*{fields[__${field.roomNumber}__]}">totalRows</td>
+	  <td colspan="11" style="text-align: left; font-weight: bold;" th:text="${facet.roomNumber}">totalRows</td>
 	
 	  </tr>
 </fieldset>
