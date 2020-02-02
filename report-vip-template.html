@@ -148,6 +148,7 @@
         <table cellspacing="0" cellpadding="0">
             <thead>
             <tr class="tabletitle">
+		    
                <th style="width: 50px;">Room No.</th>       
 						<th style="width: 50px;">Name/ VIP</th>       
 						<th style="width: 50px;">Conf. No.</th>
@@ -164,13 +165,12 @@
 						<th style="width: 45px;">Rate Code</th>
 			</tr>
 		    <div th:remove="tag" th:each="report_info: ${reportInfo}">
-			<tr>
-				<th colspan="14" style="text-align: left; font-weight: bold;" th:text="${report_info.bookingNumber}+ ': ' + ${report_info.reservationStatus}">GroupBy</th> 
-			</tr>
+
             </thead>
             <tbody>
             
                 <tr>
+			
                     <td th:text="${report_info?.bookingNumber}">bookingNumber</td>
                     <td th:text="${report_info?.roomNumber}">roomNumber</td>
                     <td th:text="${report_info?.reservationStatus}">reservationStatus</td>
