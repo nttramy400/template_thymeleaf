@@ -169,22 +169,12 @@
             </thead>
             <tbody>
             <div th:remove="tag" th:each="report_info: ${reportInfo}">
+		     <div th:each="arrivalReportList,i: ${report_info.lstArrivalReportList}">
 		   <tr>
-			  <td colspan="12" th:text="${report_info?.lstArrivalReportList[0].roomNumber}">lstArrivalReportList </td>    
+		<td th:text="${*{arrivalReportList[__${i.index}__]?.roomNumber}">roomNumber</td>      
 		    </tr>
-	
-               <tr>
-		       <td th:text="${report_info?.groupBy}">groupBy</td>
-		       <td th:text="${report_info?.value}">value</td>
-                    <td th:text="${report_info?.bookingNumber}">bookingNumber</td>
-                    <td th:text="${report_info?.roomNumber}">roomNumber</td>
-                    <td th:text="${report_info?.reservationStatus}">reservationStatus</td>
-                    <td th:text="${report_info?.fullName}">fullName</td>
-                    <td th:text="${report_info?.vipLevel}">vipLevel</td>
-                    <td th:text="${report_info?.arrivalDate}">arrivalDate</td>
-                    <td colspan="5" th:text="${report_info?.departureDate}">departureDate </td>
-		    
-                </tr>
+
+		    </div>
             </div>
             <tr>
                 <td style="text-align: left; font-weight: bold;">REPORT TOTAL COUNT:</td>
