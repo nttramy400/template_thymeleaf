@@ -167,10 +167,10 @@
             </thead>
             <tbody>
                 <tr>
-					<div th:remove="tag" th:each="report_info: ${reportInfo}">
-					<tr>
-						<th colspan="14" style="text-align: left; font-weight: bold;" th:text="${report_info.groupBy}+ ': ' + ${report_info.value}">GroupBy</th> 
-						<div th:each="arrivalInfo : ${report_info.lstArrivalReportList}">
+					<div th:each="report_info: ${reportInfo}">
+					<tr th:each="arrivalInfo : ${report_info.lstArrivalReportList}">
+						
+		
 							<td th:text="${arrivalInfo.roomNumber}">roomNumber</td>     
 							<td th:text="${arrivalInfo.nameVip}">name_vip</td>      
 							<td th:text="${arrivalInfo.confNo}">confNo</td>       
@@ -185,7 +185,7 @@
 							<td th:text="${arrivalInfo.chl}">chl</td>     
 							<td th:text="${arrivalInfo.paymentMethod}">paymentMethod</td>     
 							<td th:text="${arrivalInfo.rateCode}">rateCode</td>	
-						</div>	
+					
 					</tr>
 									
                 </tr>
