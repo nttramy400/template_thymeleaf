@@ -169,6 +169,9 @@
             </thead>
             <tbody>
             <div th:remove="tag" th:each="report_info: ${reportInfo}">
+		   <tr>
+			  <td colspan="12" th:text="${report_info?.lstArrivalReportList[0].roomNumber}">lstArrivalReportList </td>    
+		    </tr>
 	
                <tr>
 		       <td th:text="${report_info?.groupBy}">groupBy</td>
@@ -180,7 +183,7 @@
                     <td th:text="${report_info?.vipLevel}">vipLevel</td>
                     <td th:text="${report_info?.arrivalDate}">arrivalDate</td>
                     <td colspan="5" th:text="${report_info?.departureDate}">departureDate </td>
-		    <td th:text="${report_info?.lstArrivalReportList[0].roomNumber}">lstArrivalReportList </td>   
+		    
                 </tr>
             </div>
             <tr>
