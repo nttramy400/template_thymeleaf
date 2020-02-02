@@ -171,7 +171,7 @@
             <div th:remove="tag" th:each="report_info: ${reportInfo}">
 		     <div th:each="arrivalReportList,i: ${report_info.lstArrivalReportList}">
 		   <tr>
-		<td th:text="${*{arrivalReportList[__${i.index}__]?.roomNumber}">roomNumber</td>      
+		<td th:text="${*{arrivalReportList[__${i.index}__].roomNumber}">roomNumber</td>      
 		    </tr>
 
 		    </div>
