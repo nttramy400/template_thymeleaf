@@ -166,30 +166,13 @@
 			
             </thead>
             <tbody>
-			<div th:each="report_info: ${reportInfo}">
-					
-					<tr th:each="arrivalInfo : ${report_info.lstArrivalReportList}">
-						
-		
-							<td th:text="${arrivalInfo.roomNumber}">roomNumber</td>     
-							<td th:text="${arrivalInfo.nameVip}">name_vip</td>      
-							<td th:text="${arrivalInfo.confNo}">confNo</td>       
-							<td th:text="${arrivalInfo.name}">name</td>      
-							<td th:text="${arrivalInfo.vip}">vip</td>      
-							<td th:text="${arrivalInfo.nationality}">nationality</td>      
-							<td th:text="${arrivalInfo.companyTA}">company_TA</td>       
-							<td th:text="${arrivalInfo.eta}">eta</td>      
-							<td th:text="${arrivalInfo.etd}">etd</td>     
-							<td th:text="${arrivalInfo.roomType}">roomType</td>      
-							<td th:text="${arrivalInfo.adl}">Adl</td>      
-							<td th:text="${arrivalInfo.chl}">chl</td>     
-							<td th:text="${arrivalInfo.paymentMethod}">paymentMethod</td>     
-							<td th:text="${arrivalInfo.rateCode}">rateCode</td>	
-					
-					</tr>
-									
+			<div th:each="field:${reportInfo}">
+  <tr th:each="facet:${field.lstArrivalReportList}">
+	  <td colspan="11" style="text-align: left; font-weight: bold;" th:text="${facet.roomNumber}">totalRows</td>
+	
+	  </tr>
 
-            </div>
+		 </div>  
             <tr>
                 <td style="text-align: left; font-weight: bold;">REPORT TOTAL COUNT:</td>
                 <td colspan="11" style="text-align: left; font-weight: bold;" th:text="${totalRows}">totalRows</td>
