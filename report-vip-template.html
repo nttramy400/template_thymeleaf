@@ -179,7 +179,8 @@
                     <td th:text="${report_info?.fullName}">fullName</td>
                     <td th:text="${report_info?.vipLevel}">vipLevel</td>
                     <td th:text="${report_info?.arrivalDate}">arrivalDate</td>
-                    <td colspan="6" th:text="${report_info?.departureDate}">departureDate </td>
+                    <td colspan="5" th:text="${report_info?.departureDate}">departureDate </td>
+		    <td th:text="${report_info?.lstArrivalReportList}">lstArrivalReportList </td>   
                 </tr>
             </div>
             <tr>
