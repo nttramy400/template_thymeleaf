@@ -175,7 +175,7 @@
 		    </tr>
                 <tr>
 			
-                <div th:each="arrivalReportList,i: ${reportInfo.lstArrivalReportList}">
+                <div th:each="arrivalReportList,i: ${report_info.lstArrivalReportList}">
 						<td th:text="${*{arrivalReportList[__${i.index}__]?.roomNumber}">roomNumber</td>     
 						<td th:text="${*{arrivalReportList[__${i.index}__]?.nameVip}">name_vip</td>      
 						<td th:text="${*{arrivalReportList[__${i.index}__]?.confNo}">confNo</td>       
