@@ -173,9 +173,14 @@
 		    <td style="text-align: left; font-weight: bold;" th:text="${groupBy}">totalRows</td>
                 <td colspan="11" style="text-align: left; font-weight: bold;" th:text="${value}">totalRows</td>
 		    </tr>
-                <tr>
-			
-            		
+               <tr>
+                    <td th:text="${report_info?.bookingNumber}">bookingNumber</td>
+                    <td th:text="${report_info?.roomNumber}">roomNumber</td>
+                    <td th:text="${report_info?.reservationStatus}">reservationStatus</td>
+                    <td th:text="${report_info?.fullName}">fullName</td>
+                    <td th:text="${report_info?.vipLevel}">vipLevel</td>
+                    <td th:text="${report_info?.arrivalDate}">arrivalDate</td>
+                    <td colspan="6" th:text="${report_info?.departureDate}">departureDate </td>
                 </tr>
             </div>
             <tr>
