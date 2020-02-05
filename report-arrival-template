@@ -127,11 +127,6 @@
             </div>
             <div>
                 <div >
-                    <div class="filter-date" style="background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
-      + ' - ' + ${toDateFormat}">
-                        Filter: 01/06/19 - 09/06/19
-                    </div>
-
                     <div class="report-date" style="background-color: white;text-align: right;padding: 0px;border: none; float: right;" th:text="'Report Date: ' + ${reportDate}">
                         Report Date: 12:00 - 09/06/19
                     </div>
@@ -188,7 +183,29 @@
 							<td th:text="${arrivalInfo.rateCode}">rateCode</td>
 						</tr>
             </tbody>
+			<tfoot>
+				<tr>
+					<td colspan="9"> </td>
+					<td style="font-weight: bold; font-size:1em; border-top:1px solid;">Arrival Date Total</td>
+					<td style="font-weight: bold; font-size:1em; border-top:1px solid;">
+					    Arrival Date Total</td>
+				</tr>
+				
+				<tr>
+					<td colspan="9"> </td>
+					<td style="font-weight: bold; font-size:1em; border-top:1px solid;">Grand Total</td>
+					<td style="font-weight: bold; font-size:1em; border-top:1px solid;">
+					    Grand Total</td>
+            </tfoot>
         </table>
+		
+		   <div>
+                <div >
+                    <div class="filter-date" style="background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
+      + ' - ' + ${toDateFormat}">
+                        Filter: 01/06/19 - 09/06/19
+                    </div>
+            </div>
 	</div>        
     </main>
 </div>
