@@ -121,24 +121,28 @@
                         <span class="logo-title" th:text="${propertyName}">Tây Ninh</span>
                     </div>
                 </div>
+				
                 <div style="display: inline-block; width: 33.33%;">
                     <h1 class="page-title">Arrival LIST</h1>
                 </div>
             </div>
-					   <div>
+			
+			<div>
                 <div >
                     <div class="filter-date" style="background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
       + ' - ' + ${toDateFormat}">
                         Filter: 01/06/19 - 09/06/19
                     </div>
-            </div>
-	</div>    
+				</div>
+			</div>  
+			
             <div>
                 <div >
                     <div class="report-date" style="background-color: white;text-align: right;padding: 0px;border: none; float: right;" th:text="'Report Date: ' + ${reportDate}">
                         Report Date: 12:00 - 09/06/19
                     </div>
                 </div>
+				
 				<div>
 					<div class="report-date" style="background-color: white;text-align: left;padding: 0px;border: none; float: right;" th:text="'Report Time: ' + ${reportTime}">
                         Report Time1: 12:00
@@ -151,43 +155,43 @@
 	<div>
 		<table cellspacing="0" cellpadding="0">
             <thead>
-            <tr class="tabletitle">
-                <th style="width: 50px;">Room No.</th>       
-						<th style="width: 50px;">Name/ VIP</th>       
-						<th style="width: 50px;">Conf. No.</th>
-						<th style="width: 65px;">VIP</th>
-						<th style="width: 45px;">Nationality</th>        
-						<th style="width: 45px;">Company/ Travel Agent</th>
-						<th style="width: 45px;">Arr. Date/ ETA</th>
-						<th style="width: 45px;">Dep. Date/ ETD</th>
-						<th style="width: 45px;">Rm. Type</th>
-						<th style="width: 45px;">Adl</th>
-						<th style="width: 45px;">Chl.</th>
-						<th style="width: 45px;">Payment Mth.</th>
-						<th style="width: 45px;">Rate Code</th>
-			</tr>
-			
+				<tr class="tabletitle">
+					<th style="width: 50px;">Room No.</th>       
+					<th style="width: 50px;">Name/ VIP</th>       
+					<th style="width: 50px;">Conf. No.</th>
+					<th style="width: 65px;">VIP</th>
+					<th style="width: 45px;">Nationality</th>        
+					<th style="width: 45px;">Company/ Travel Agent</th>
+					<th style="width: 45px;">Arr. Date/ ETA</th>
+					<th style="width: 45px;">Dep. Date/ ETD</th>
+					<th style="width: 45px;">Rm. Type</th>
+					<th style="width: 45px;">Adl</th>
+					<th style="width: 45px;">Chl.</th>
+					<th style="width: 45px;">Payment Mth.</th>
+					<th style="width: 45px;">Rate Code</th>
+				</tr>			
             </thead>
+			
             <tbody th:each="report_info:${reportInfo}">
 					<tr>
 						<td style="text-align: left; font-weight: bold;" th:text="${report_info.groupBy}">Group By</td>
 						<td colspan="11" style="text-align: left; font-weight: bold;" th:text="${report_info.value}">value</td>
 					</tr>
-						<tr class="content" th:each="arrivalInfo:${report_info.lstArrivalReportList}">
-							<td th:text="${arrivalInfo.roomNo}">roomNo</td>
-							<td th:text="${arrivalInfo.guestName}">guestName</td>
-							<td th:text="${arrivalInfo.confirmationNo}">confNo</td>
-							<td th:text="${arrivalInfo.vipLevel}">vip</td>
-							<td th:text="${arrivalInfo.nationality}">nationality</td>
-							<td th:text="${arrivalInfo.company}">companyTA</td>
-							<td th:text="${arrivalInfo.eta}">eta</td>
-							<td th:text="${arrivalInfo.etd}">etd</td>
-							<td th:text="${arrivalInfo.roomType}">roomType</td>
-							<td th:text="${arrivalInfo.numberOfAdult}">numberOfAdult</td>
-							<td th:text="${arrivalInfo.numberOfChild}">numberOfChild</td>
-							<td th:text="${arrivalInfo.paymentMethod}">paymentMethod</td>
-							<td th:text="${arrivalInfo.rateCode}">rateCode</td>
-						</tr>
+					<tr class="content" th:each="arrivalInfo:${report_info.lstArrivalReportList}">
+						<td th:text="${arrivalInfo.roomNo}">roomNo</td>
+						<td th:text="${arrivalInfo.guestName}">guestName</td>
+						<td th:text="${arrivalInfo.confirmationNo}">confNo</td>
+						<td th:text="${arrivalInfo.vipLevel}">vip</td>
+						<td th:text="${arrivalInfo.nationality}">nationality</td>
+						<td th:text="${arrivalInfo.company}">companyTA</td>
+						<td th:text="${arrivalInfo.eta}">eta</td>
+						<td th:text="${arrivalInfo.etd}">etd</td>
+						<td th:text="${arrivalInfo.roomType}">roomType</td>
+						<td th:text="${arrivalInfo.numberOfAdult}">numberOfAdult</td>
+						<td th:text="${arrivalInfo.numberOfChild}">numberOfChild</td>
+						<td th:text="${arrivalInfo.paymentMethod}">paymentMethod</td>
+						<td th:text="${arrivalInfo.rateCode}">rateCode</td>
+					</tr>					
             </tbody>
 			<tfoot>
 				<tr>
@@ -200,20 +204,19 @@
 				<tr>
 					<td colspan="9"> </td>
 					<td style="font-weight: bold; font-size:1em; border-top:1px solid;">Grand Total</td>
-					<td style="font-weight: bold; font-size:1em; border-top:1px solid;">
-					    Grand Total</td>
+					<td style="font-weight: bold; font-size:1em; border-top:1px solid;">Grand Total</td>
 				</tr>
             </tfoot>
         </table>
-		
-		   <div>
-                <div >
+	</div>
+		<div>
+			<div >
                     <div class="filter-date" style="background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
       + ' - ' + ${toDateFormat}">
                         Filter: 01/06/19 - 09/06/19
                     </div>
             </div>
-	</div>        
+		</div>        
     </main>
 </div>
 </body>
