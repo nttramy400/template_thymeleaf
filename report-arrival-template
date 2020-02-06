@@ -125,6 +125,14 @@
                     <h1 class="page-title">Arrival LIST</h1>
                 </div>
             </div>
+					   <div>
+                <div >
+                    <div class="filter-date" style="background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
+      + ' - ' + ${toDateFormat}">
+                        Filter: 01/06/19 - 09/06/19
+                    </div>
+            </div>
+	</div>    
             <div>
                 <div >
                     <div class="report-date" style="background-color: white;text-align: right;padding: 0px;border: none; float: right;" th:text="'Report Date: ' + ${reportDate}">
@@ -147,7 +155,6 @@
                 <th style="width: 50px;">Room No.</th>       
 						<th style="width: 50px;">Name/ VIP</th>       
 						<th style="width: 50px;">Conf. No.</th>
-						<th style="width: 70px;">Name</th>
 						<th style="width: 65px;">VIP</th>
 						<th style="width: 45px;">Nationality</th>        
 						<th style="width: 45px;">Company/ Travel Agent</th>
@@ -167,18 +174,17 @@
 						<td colspan="11" style="text-align: left; font-weight: bold;" th:text="${report_info.value}">value</td>
 					</tr>
 						<tr class="content" th:each="arrivalInfo:${report_info.lstArrivalReportList}">
-							<td th:text="${arrivalInfo.roomNumber}">roomNumber</td>
-							<td th:text="${arrivalInfo.nameVip}">nameVip</td>
-							<td th:text="${arrivalInfo.confNo}">confNo</td>
-							<td th:text="${arrivalInfo.name}">name</td>
-							<td th:text="${arrivalInfo.vip}">vip</td>
+							<td th:text="${arrivalInfo.roomNo}">roomNo</td>
+							<td th:text="${arrivalInfo.guestName}">guestName</td>
+							<td th:text="${arrivalInfo.confirmationNo}">confNo</td>
+							<td th:text="${arrivalInfo.vipLevel}">vip</td>
 							<td th:text="${arrivalInfo.nationality}">nationality</td>
-							<td th:text="${arrivalInfo.companyTA}">companyTA</td>
+							<td th:text="${arrivalInfo.company}">companyTA</td>
 							<td th:text="${arrivalInfo.eta}">eta</td>
 							<td th:text="${arrivalInfo.etd}">etd</td>
 							<td th:text="${arrivalInfo.roomType}">roomType</td>
-							<td th:text="${arrivalInfo.adl}">adl</td>
-							<td th:text="${arrivalInfo.chl}">chl</td>
+							<td th:text="${arrivalInfo.adl}">numberOfAdult</td>
+							<td th:text="${arrivalInfo.chl}">numberOfChild</td>
 							<td th:text="${arrivalInfo.paymentMethod}">paymentMethod</td>
 							<td th:text="${arrivalInfo.rateCode}">rateCode</td>
 						</tr>
