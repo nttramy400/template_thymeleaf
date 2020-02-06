@@ -183,8 +183,8 @@
 							<td th:text="${arrivalInfo.eta}">eta</td>
 							<td th:text="${arrivalInfo.etd}">etd</td>
 							<td th:text="${arrivalInfo.roomType}">roomType</td>
-							<td th:text="${arrivalInfo.adl}">numberOfAdult</td>
-							<td th:text="${arrivalInfo.chl}">numberOfChild</td>
+							<td th:text="${arrivalInfo.numberOfAdult}">numberOfAdult</td>
+							<td th:text="${arrivalInfo.numberOfChild}">numberOfChild</td>
 							<td th:text="${arrivalInfo.paymentMethod}">paymentMethod</td>
 							<td th:text="${arrivalInfo.rateCode}">rateCode</td>
 						</tr>
