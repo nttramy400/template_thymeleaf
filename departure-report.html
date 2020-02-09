@@ -445,15 +445,19 @@
         <header>
             <div class="header-container">
                 <div class="header-logo">
-                    <img src="${logo}" alt="Logo" />
+                    <img th:src="${logo}" alt="Logo" />
                     <p class="property-name" th:text="${propertyName}">${propertyName}</p>
                 </div>
                 <div>
                     <h1 class="page-title">DEPARTURES REPORT</h1>
                 </div>
                 <div class="report-date">
-                    <div>
-                        <span th:text="'Report Date: ' + ${reportDateFormat}">reportDate</span>
+                    <div class="report-date">
+                        <div>
+                            <span th:text="${reportDate}">reportDate</span>
+                            <br/>
+                            <span th:text="${reportTime}">reportDate</span>
+                        </div>			
                     </div>
                 </div>
             </div>
