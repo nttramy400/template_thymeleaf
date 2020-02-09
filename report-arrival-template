@@ -409,7 +409,7 @@
         }
 
         .report-date div {
-            font-weight: bold;
+          
             padding-top: 65px;
         }
 
@@ -451,7 +451,7 @@
                 <div>
                     <span th:text="${dataReport?.reportDate}">reportDate</span>
 					<br/>
-                    <span th:text="${dataReport?.reportTime}">reportDate</span>
+                    <span th:text="${dataReport?.reportTime}">reportDate</span>				
                 </div>
             </div>
         </div>
@@ -459,49 +459,26 @@
     </header>
     <main>
 	
-			<div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;">
-				<table>
-					<tr>
-						<td  rowspan="5" style="text-align: left; font-weight: bold;">Filter</td>
-					</tr>
-					<tr>
-					<td>
-						<span th:text="'Arrival From Date: '+ ${dataReport?.filter?.fromDate}+ ' &lt;br Arrival To Date ' + ${dataReport?.filter?.toDate}"> from date - to date </span>							
-						<span th:text="'Bussiness Date '+ ${dataReport?.businesDate}">Bussiness Date</span>	
-						<br/>						
-						<span th:if="${dataReport?.filter?.roomTypeCodes != null}" th:text="'Room Types: '+ ${dataReport?.filter?.roomTypeCodes}"></span>							
-						<br/>
-						<span th:if="${dataReport?.filter?.marketCodes != null}" th:text="'Market Code: '+ ${dataReport?.filter?.marketCodes}"></span>
-						<span th:if="${dataReport?.filter?.sourceCodes != null}" th:text="'Source: '+ ${dataReport?.filter?.sourceCodes}"></span>		
-						<br/>
-						<span th:if="${dataReport?.filter?.etaTo != null}" th:text="'From Arrival Time: '+ ${dataReport?.filter?.etaTo}"></span>	
-						<span th:if="${dataReport?.filter?.etaFrom != null}" th:text="'To Arrival Time: '+ ${dataReport?.filter?.etaFrom}"></span>			
-					</td>						
-					</tr>	
-				</table>                
-            </div>
 	<div>
 
 	
-		<table cellspacing="0" cellpadding="0" style="padding-bottom:20px;">
+		<table cellspacing="0" cellpadding="0">
 			
             <thead>
 				<tr class="tabletitle">
 					<th style="width: 50px;">Room No.</th>       
-					<th style="width: 50px;">Name</th>       
-					<th style="width: 50px;">Conf. No.</th>
+					<th style="width: 50px;">Name <br/> Confirmation No.</th>       
 					<th style="width: 65px;">VIP</th>
-					<th style="width: 45px;">Nationality</th>        
-					<th style="width: 45px;">Company/ Travel Agent</th>
-					<th style="width: 60px;">Arr. Date/ ETA</th>
-					<th style="width: 60px;">Dep. Date/ ETD</th>
-					<th style="width: 45px;">Rm. Type</th>
-					<th style="width: 30px;">Adl.</th>
+					<th style="width: 70px;">Nationality<br/>Travel Agent<br/>Source<br/>Block Code</th>        
+					<th style="width: 45px;">Company</th>
+					<th style="width: 60px;">Arr. Date<br/>ETA</th>
+					<th style="width: 60px;">Dep. Date</th>
+					<th style="width: 45px;">Room Type</th>
+					<th style="width: 30px;">Adl.<br/>ETD</th>
 					<th style="width: 30px;">Chl.</th>
 					<th style="width: 45px;">Payment Mth.</th>
 					<th style="width: 45px;">Rate Code</th>
 					<th style="width: 45px;">Mkt code</th>
-					<th style="width: 45px;">Src. code</th>
 					<th style="width: 45px;">Res. status</th>
 				</tr>			
             </thead>
@@ -509,25 +486,39 @@
 			
             <tbody th:each="report_info:${dataReport?.data?.reportInfo}">
 					<tr>
-						<td style="text-align: left; font-weight: bold;" th:text="${report_info?.groupBy}">Group By</td>
-						<td colspan="16" style="text-align: left; font-weight: bold;" th:text="${report_info?.value}">value</td>
+						<td colspan="2" style="text-align: left; font-weight: bold;" th:text="${report_info?.groupBy}">Group By</td>
+						<td colspan="12" style="text-align: left; font-weight: bold;" th:text="${report_info?.value}">value</td>
 					</tr>
 					<tr style="page-break-inside:avoid;" th:each="arrivalInfo:${report_info?.lstArrivalReportList}">
 						<td th:text="${arrivalInfo?.roomNumber}">roomNo</td>
-						<td th:text="${arrivalInfo?.guestName}">guestName</td>
-						<td th:text="${arrivalInfo?.confirmationNo}">confNo</td>
+						<td>
+							<span th:text="${arrivalInfo?.guestName}"> </span>
+							<span th:text="${arrivalInfo?.confirmationNo}"> </span>
+						</td>
 						<td th:text="${arrivalInfo?.vipLevel}">vip</td>
-						<td th:text="${arrivalInfo?.nationality}">nationality</td>
+						<td>
+							<span th:text="${arrivalInfo?.nationality}"> </span>
+							<span th:text="${arrivalInfo?.travelAgent}"> </span>
+							<span th:text="${arrivalInfo?.sourceCode}"> </span>
+							<span th:text="${arrivalInfo?.groupCode}"> </span>
+						</td>
 						<td th:text="${arrivalInfo?.company}">companyTA</td>
-						<td th:text="${arrivalInfo?.arrivalDate}">eta</td>
-						<td th:text="${arrivalInfo?.departureDate}">etd</td>
+						<td>
+							<span th:text="${arrivalInfo?.arrivalDate}"> </span>
+							<span th:text="${arrivalInfo?.eta}"> </span>
+						</td>
+						<td th:text="${arrivalInfo?.departureDate}">
+							<span th:text="${arrivalInfo?.arrivalDate}"> </span>
+						</td>
 						<td th:text="${arrivalInfo?.roomType}">roomType</td>
-						<td th:text="${arrivalInfo?.numberOfAdult}">numberOfAdult</td>
+						<td th:text="${arrivalInfo?.numberOfAdult}">
+							<span th:text="${arrivalInfo?.numberOfAdult}"> </span>
+							<span th:text="${arrivalInfo?.etd}"> </span>
+						</td>
 						<td th:text="${arrivalInfo?.numberOfChild}">numberOfChild</td>
 						<td th:text="${arrivalInfo?.paymentMethodCode}">paymentMethod</td>
 						<td th:text="${arrivalInfo?.rateCode}">rateCode</td>
 						<td th:text="${arrivalInfo?.marketCode}">marketCode</td>
-						<td th:text="${arrivalInfo?.sourceCode}">sourceCode</td>
 						<td th:text="${arrivalInfo?.reservationStatus}">reservationStatus</td>
 					</tr>					
             </tbody>
@@ -535,7 +526,7 @@
 				<tr>
 					<td colspan="2" style="font-weight: bold; font-size:1em; border-top:1px solid;">Arrival Date Total</td>
 					<td style="font-weight: bold; font-size:1em; border-top:1px solid;" th:text="${dataReport?.data?.summary?.totalArrived}">0</td>
-					<td colspan="6" style="font-weight: bold; font-size:1em; border-top:1px solid; text-align:right">Total</td>
+					<td colspan="5" style="font-weight: bold; font-size:1em; border-top:1px solid; text-align:right">Total</td>
 					<td style="font-weight: bold; font-size:1em; border-top:1px solid;" th:text="${dataReport?.data?.summary?.totalAdult}">0</td>
 					<td colspan="7" style="font-weight: bold; font-size:1em; border-top:1px solid;" th:text="${dataReport?.data?.summary?.totalChild}">0</td>
 					
@@ -543,35 +534,42 @@
             </tfoot>
         </table>
 	</div>
- 
-
-		<div style="right: 30px; position:fixed; bottom:5px;">
-			<span th:text="${username}">username</span>
-		</div>		
+		     
     </main>
-</div>
-		<div style="position: fixed; left:30px; text-align: right; display: flex;">
-			<div >
-				<table>
+	
+
+		<div>
+			<div style="left:30px; text-align: right; border: none;">
+				<table style="margin-top:30px">
 					<tr>
 						<td  rowspan="5" style="text-align: left; font-weight: bold;">Filter</td>
 					</tr>
 					<tr>
 					<td>
-						<span th:text="'From Date: '+ ${dataReport?.filter?.fromDate}+ 'To Date ' + ${dataReport?.filter?.toDate}"> from date - to date </span>							
-						<span th:text="'Bussiness Date '+ ${dataReport?.businesDate}">Bussiness Date</span>	
-						<br/>						
+						<span th:text="'From Date: '+ ${dataReport?.filter?.fromDate}+ ' To Date ' + ${dataReport?.filter?.toDate}"> from date - to date </span>							
+						<span th:text="'Bussiness Date '+ ${dataReport?.businesDate}">Bussiness Date</span>						
 						<span th:if="${dataReport?.filter?.roomTypeCodes != null}" th:text="'Room Types: '+ ${dataReport?.filter?.roomTypeCodes}"></span>							
-						<br/>
 						<span th:if="${dataReport?.filter?.marketCodes != null}" th:text="'Market Code: '+ ${dataReport?.filter?.marketCodes}"></span>
 						<span th:if="${dataReport?.filter?.sourceCodes != null}" th:text="'Source: '+ ${dataReport?.filter?.sourceCodes}"></span>		
-						<br/>
 						<span th:if="${dataReport?.filter?.etaTo != null}" th:text="'From Arrival Time: '+ ${dataReport?.filter?.etaTo}"></span>	
-						<span th:if="${dataReport?.filter?.etaFrom != null}" th:text="'To Arrival Time: '+ ${dataReport?.filter?.etaFrom}"></span>			
-					</td>						
+						<span th:if="${dataReport?.filter?.etaFrom != null}" th:text="'To Arrival Time: '+ ${dataReport?.filter?.etaFrom}"></span>													
+					</td>	
+
+					<td style="text-align:right">
+					<span th:text="${dataReport?.username}">reportDate</span>
+					</td>					
 					</tr>	
 				</table>                
             </div>
-		</div>   
+		</div>  
+	
+</div>
+
+ 
 </body>
+
+
+
+
+
 </html>
