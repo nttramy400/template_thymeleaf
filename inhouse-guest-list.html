@@ -478,21 +478,21 @@
             </thead>
 			
             <tbody th:each="report_info:${reportInfo}">
-						<td th:text="${reportInfo?.roomName}">roomName</td>
+						<td th:text="${report_info?.roomName}">roomName</td>
                         <td>
-                            <span th:text="${reportInfo?.mainGuestProfileName}+ ' &lt;br' ${reportInfo?.vipLevel}">mainGuestProfileName <br/> vipLevel</span>
+                            <span th:text="${report_info?.mainGuestProfileName}+ ' &lt;br' ${report_info?.vipLevel}">mainGuestProfileName <br/> vipLevel</span>
                         </td>
-						<td th:text="${reportInfo?.blockCode}">blockCode</td>
-                        <td th:text="${reportInfo?.companyProfileName}">companyProfileName</td>
-						<td th:text="${reportInfo?.arrivalDateFormat}">arrivalDateFormat</td>
+						<td th:text="${report_info?.blockCode}">blockCode</td>
+                        <td th:text="${report_info?.companyProfileName}">companyProfileName</td>
+						<td th:text="${report_info?.arrivalDateFormat}">arrivalDateFormat</td>
 						<td>
-                            <span th:text="${reportInfo?.departureDateFormat}+ ' &lt;br' ${reportInfo?.etd}">departureDateFormat <br/> etd</span>
+                            <span th:text="${report_info?.departureDateFormat}+ ' &lt;br' ${report_info?.etd}">departureDateFormat <br/> etd</span>
                         </td>
-						<td th:text="${reportInfo?.roomType}">roomType</td>
-						<td th:text="${reportInfo?.numberOfAdult}">numberOfAdult</td>
-                        <td th:text="${reportInfo?.numberOfChild}">numberOfChild</td>
-                        <td th:text="${reportInfo?.paymentMethod}">paymentMethod</td>
-                        <td th:text="${reportInfo?.rateCode}">rateCode</td>			
+						<td th:text="${report_info?.roomType}">roomType</td>
+						<td th:text="${report_info?.numberOfAdult}">numberOfAdult</td>
+                        <td th:text="${report_info?.numberOfChild}">numberOfChild</td>
+                        <td th:text="${report_info?.paymentMethod}">paymentMethod</td>
+                        <td th:text="${report_info?.rateCode}">rateCode</td>			
             </tbody>
         </table>
 	</div>
