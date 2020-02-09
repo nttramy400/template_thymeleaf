@@ -480,32 +480,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <div th:remove="tag" th:each="report_info: ${reportInfo}"
-                        th:with="guestProfileCount=${report_info.guestProfiles.size()}, rowSpanColumn=${report_info?.numberOfAdult > report_info.guestProfiles.size() ? report_info.guestProfiles.size() + 1 : report_info.guestProfiles.size()}">
-                        <tr th:classappend="${report_infoStat.count % 2} == 0 ? odd : even">
-                            <td></td>
-                            <td
-                                th:text="${guestProfileCount > 0 ? report_info.guestProfiles[0]?.lastName != null ? report_info.guestProfiles[0]?.lastName +', ' + report_info.guestProfiles[0]?.firstName : '' : ''}">
-                            </td>
-                            <td
-                                th:text="${report_info.travelAgentProfileName != '' ? report_info.travelAgentProfileName : report_info.companyProfileName}">
-                            </td>
-                            <td th:text="${guestProfileCount > 0 ? report_info.guestProfiles[0].vipCode : ''}">
-                            </td>
-                            <td th:text="${report_info.arrivalDateFormat}">04-09-2019</td>
-                            <td th:text="${report_info.departureDateFormat}">05-09-2019
-                            </td>
-                            <td th:text="${report_info?.numberOfAdult}">0</td>
-                            <td th:text="${report_info?.numberOfChild}">0</td>
-                            <td></td>
-                            <td th:text="${report_info?.roomType}"></td>
-                            <td></td>
-                            <td></td>
-                            <td th:text="${report_info?.status}">Arrival</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </div>
+                    <tr th:remove="tag" th:each="report_info: ${reportInfo}">
+                        <td></td>
+                        <td
+                            th:text="${guestProfileCount > 0 ? report_info.guestProfiles[0]?.lastName != null ? report_info.guestProfiles[0]?.lastName +', ' + report_info.guestProfiles[0]?.firstName : '' : ''}">
+                        </td>
+                        <td
+                            th:text="${report_info.travelAgentProfileName != '' ? report_info.travelAgentProfileName : report_info.companyProfileName}">
+                        </td>
+                        <td th:text="${guestProfileCount > 0 ? report_info.guestProfiles[0].vipCode : ''}">
+                        </td>
+                        <td th:text="${report_info.arrivalDateFormat}">04-09-2019</td>
+                        <td th:text="${report_info.departureDateFormat}">05-09-2019
+                        </td>
+                        <td th:text="${report_info?.numberOfAdult}">0</td>
+                        <td th:text="${report_info?.numberOfChild}">0</td>
+                        <td></td>
+                        <td th:text="${report_info?.roomType}"></td>
+                        <td></td>
+                        <td></td>
+                        <td th:text="${report_info?.status}">Arrival</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </main>
