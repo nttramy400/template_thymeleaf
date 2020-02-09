@@ -22,7 +22,7 @@
                         src="https://s3.ap-southeast-1.amazonaws.com/statics.stg.cloudhms.io/customer-files/37643830-3838-3335-2d35-6464352d3863/2020/01/9/152828-a7ed5e5d-4852-41c5-9293-67917dfcde31.jpg"
                         alt="Logo" />
                     <p style="color: #3A559F;font-weight: bold;">Vinpearl</p>
-                    <p class="property-name" th:text="${dataReport?.propertyName}">${data?.propertyName}</p>
+                    <p class="property-name" th:text="${dataReport?.propertyName}">${propertyName}</p>
                 </div>
                 <h4 style="text-align: center;"> GUEST REGISTRATION FORM / PHIẾU ĐĂNG KÍ TẠM TRÚ
                 </h4>
@@ -48,16 +48,16 @@
                             style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
                             valign="middle"></td>
                         <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.fullName}">
+                            valign="middle" th:text="${fullName}">
                             Hải Trang</td>
                         <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.fullName}">
+                            valign="middle" th:text="${fullName}">
                             Ngọc</td>
                         <td class="text-center"
                             style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.confirmationNumber}">1102</td>
+                            valign="middle" th:text="${confirmationNumber}">1102</td>
                         <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.total}">
+                            valign="middle" th:text="${total}">
                             1.000.000 ₫</td>
                     </tr>
                     <tr>
@@ -82,17 +82,17 @@
                             valign="middle"> </td>
                         <td rowspan="2"
                             style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                            valign="middle" th:text="${data?.roomTypeName}"></td>
+                            valign="middle" th:text="${roomTypeName}"></td>
                         <td rowspan="2"
                             style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                            valign="middle" th:text="${data?.roomNumber}">KDLO </td>
+                            valign="middle" th:text="${roomNumber}">KDLO </td>
                     </tr>
                     <tr>
                         <td class="text-center"
                             style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.numberOfGuests}"></td>
+                            valign="middle" th:text="${numberOfGuests}"></td>
                         <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.numberOfNights}"> child</td>
+                            valign="middle" th:text="${numberOfNights}"> child</td>
                     </tr>
                     <tr>
                         <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
@@ -109,18 +109,18 @@
                     <tr>
                         <td class="text-center"
                             style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.arrivalDate}">14-01-20</td>
+                            valign="middle" th:text="${arrivalDate}">14-01-20</td>
                         <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.departureDate}">
+                            valign="middle" th:text="${departureDate}">
                             15-01-20</td>
                         <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.nationality}">
+                            valign="middle" th:text="${nationality}">
                             Viet Nam</td>
                         <td class="text-center"
                             style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.departureDate}">14-01-20</td>
+                            valign="middle" th:text="${departureDate}">14-01-20</td>
                         <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                            valign="middle" th:text="${data?.idCard}">
+                            valign="middle" th:text="${idCard}">
                             13204392</td>
                     </tr>
                     <tr>
@@ -139,11 +139,11 @@
                             style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
                             valign="middle">5 Bà Triệu, Hoàn kiếm, Hà Nội</th>
                         <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                            valign="middle" th:text="${data?.email}">Hula@gmail.com</th>
+                            valign="middle" th:text="${email}">Hula@gmail.com</th>
                         <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 200px; text-align: center;"
-                            valign="middle" th:text="${data?.phone}">1010201201</th>
+                            valign="middle" th:text="${phone}">1010201201</th>
                         <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                            valign="middle" th:text="${data?.idCard}">Đua Xe</th>
+                            valign="middle" th:text="${idCard}">Đua Xe</th>
                     </tr>
 
                 </tbody>
@@ -151,7 +151,7 @@
             <form>
                 <div class="form-group row" style="margin-bottom: 5px; margin-top: 5px;">
                     <label for="comPany" class="col-md-4 col-form-label">Company / Công ty:</label>
-                    <label for="staticEmail" class="col-md-8 col-form-label" th:text="${data?.company}">Công ty cổ phần
+                    <label for="staticEmail" class="col-md-8 col-form-label" th:text="${company}">Công ty cổ phần
                         Hoàng Anh Gia Lai </label>
                     <label for="inputPassword" class="col-sm-12 col-form-label">My Account will be settled by / Các
                         khoản chi phí của tôi sẽ được thanh toán dưới hình thức:</label>
@@ -193,13 +193,13 @@
                 <div class="form-group row " style="display: flex; margin-bottom: 5px !important;">
                     <label for="comPany" class="col-md-4 col-form-label">Credit Card No / Số thẻ tín dụng:</label>
                     <label for="staticEmail" class="col-md-8 col-form-label"
-                        style="border-bottom: solid 1px; width: 400px;" th:text="${data?.idCard}"></label>
+                        style="border-bottom: solid 1px; width: 400px;" th:text="${idCard}"></label>
 
                 </div>
                 <div class="form-group row" style="display: flex; margin-bottom: 5px !important;">
                     <label for="comPany" class="col-md-4 col-form-label">Voucher No / Số voucher:</label>
                     <label for="staticEmail" class="col-md-4 col-form-label"
-                        style="border-bottom: solid 1px; width: 400px;" th:text="${data?.idCard}"></label>
+                        style="border-bottom: solid 1px; width: 400px;" th:text="${idCard}"></label>
                 </div>
             </form>
             <hr style="border: solid 1px; margin-bottom: 5px; margin-top: 5px"><b style="font-weight: bold;">
@@ -279,11 +279,11 @@
                                         tên:</label>
                                     <label for="staticEmail" class="col-md-8 col-form-label"
                                         style="border-bottom: solid 1px; width: 400px;"
-                                        th:text="${data?.fullName}"></label>
+                                        th:text="${fullName}"></label>
                                     <label for="comPany" class="col-md-4 col-form-label">Room No / Số phòng:</label>
                                     <label for="staticEmail" class="col-md-8 col-form-label"
                                         style="border-bottom: solid 1px; width: 400px; margin-right: 15px;"
-                                        th:text="${data?.roomNumber}"></label>
+                                        th:text="${roomNumber}"></label>
                                 </div>
                                 <div class="form-group row "
                                     style="display: flex; margin-bottom: 5px; margin-top: 5px;">
@@ -312,7 +312,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col" style="border-bottom: none;"><img
-                                                th:src="${data?.srcSignatureImg}" /></th>
+                                                th:src="${srcSignatureImg}" /></th>
                                         <th scope="col" style="border-bottom: none; font-size: 10px;">RECEPTIONIST /
                                             Lễ tân
                                         </th>
