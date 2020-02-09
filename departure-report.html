@@ -150,30 +150,50 @@
             border-bottom: 1px solid #000;
         }
 
-        .report-date {
-            float: right;
-            width: 20%;
-            text-align: right;
-        }
-
-        .report-date div {
-            padding-top: 65px;
-        }
-
         .property-name {
             color: #3A559F;
             font-weight: bold;
         }
 
+        .header-container {
+            display: table;
+            width: 100%;
+            height: auto;
+        }
+
+        .header-logo {
+            float: left;
+            width: 20%;
+        }
+
+        .header-logo img {
+            width: 8.9em;
+
+        }
+
+        .report-title {
+            float: left;
+            text-align: center;
+            line-height: 100px;
+            width: 60%;
+        }
+
+        .report-title h1 {
+            vertical-align: middle;
+        }
+
+        .report-date {
+            float: right;
+            width: 20%;
+            text-align: right;
+        }
         header .page-title {
-            margin: auto;
+            position: absolute;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 2.5em;
             font-family: 'Playfair Display', serif;
             color: #3E4345;
-            text-transform: uppercase;
-            font-size: 2.5em;
-            margin-bottom: -3px;
-            /* margin-top: -32px; */
-            text-align: center;
         }
     </style>
 </head>
@@ -181,7 +201,7 @@
 <body>
     <div class="container">
         <header>
-            <div>
+            <div class="header-container">
                 <div class="header-logo">
                     <img th:src="${logo}" alt="Logo" />
                     <p class="property-name" th:text="${propertyName}">${propertyName}</p>
@@ -191,10 +211,10 @@
                 </div>
                 <div class="report-date">
                     <div>
-                        <span th:text="${reportDate}">Report Date</span>
-                        <br />
-                        <span th:text="${reportTime}">Report Time</span>
-                    </div>
+                        <span th:text="${reportDate}">reportDate</span>
+                        <br/>
+                        <span th:text="${reportTime}">reportDate</span>
+                    </div>			
                 </div>
             </div>
         </header>
