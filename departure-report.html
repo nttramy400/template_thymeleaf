@@ -502,59 +502,33 @@
                             <td></td>
                             <td></td>
                             <td th:rowspan="${rowSpanColumn}" th:text="${report_info?.status}">Arrival</td>
-                            <td ></td>
-                            <td ></td>
-                        </tr>
-                        <!-- <tr th:classappend="${report_infoStat.count % 2} == 0 ? odd : even"
-                            th:each="guest_profile,stats: ${report_info.guestProfiles}" th:if="${!stats.first}">
-                            <td th:text="${guest_profile.get('vipCode')}">Bahrain</td>
-                            <td th:text="${guest_profile.get('country')}">Bahrain</td>
-                            <td
-                                th:text="${guest_profile.get('lastName')} != null ? ${guest_profile.get('lastName')} +', ' + ${guest_profile.get('firstName')}">
-                                FirstName</td>
-                        </tr>
-                        <tr th:classappend="${report_infoStat.count % 2} == 0 ? odd : even"
-                            th:if="${report_info?.numberOfAdult > report_info.guestProfiles.size()}">
                             <td></td>
                             <td></td>
-                            <td
-                                th:text="'Missing: ' + ${report_info?.numberOfAdult - report_info.guestProfiles.size()}">
-                            </td>
-                        </tr> -->
+                        </tr>
+
                     </div>
-                    <!-- <tr>
-                        <td colspan="10" style="text-align: right; font-weight: bold;">TOTAL</td>
-                        <td style="text-align: right; font-weight: bold;" th:text="${arrivalReportSummary?.totalAdult}">
-                            0</td>
-                        <td style="text-align: right; font-weight: bold;" th:text="${arrivalReportSummary?.totalChild}">
-                            0</td>
-                        <td style="text-align: right; font-weight: bold;"
-                            th:text="${arrivalReportSummary?.totalInfant}">0</td>
-                        <td></td>
-                    </tr> -->
                 </tbody>
             </table>
-            <div>
-                <div style="left:30px; text-align: left; border: none;">
-                    <table style="margin-top:30px">
-                        <tr>
-                            <td rowspan="5" style="text-align: left; font-weight: bold;">Filter</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span
-                                    th:text="'From Date: '+ ${report_info?.filter?.fromDate}+ ' To Date ' + ${report_info?.filter?.toDate}">
-                                    from date - to date </span><br />
-                                <span th:if="${report_info?.filter?.sourceCodes != null}"
-                                    th:text="'Source: '+ ${report_info?.filter?.sourceCodes}"></span> <br />
-                            </td>
+            <div style="left:30px; text-align: left; border: none;">
+                <table style="margin-top:30px">
+                    <tr>
+                        <td rowspan="5" style="text-align: left; font-weight: bold;">Filter</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span
+                                th:text="'From Date: '+ ${report_info?.filter?.fromDate}+ ' To Date ' + ${report_info?.filter?.toDate}">
+                                from date - to date </span><br />
+                            <span th:if="${report_info?.filter?.sourceCodes != null}"
+                                th:text="'Source: '+ ${report_info?.filter?.sourceCodes}"></span> <br />
+                        </td>
 
-                            <td style="text-align:right">
-                                <span ></span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                        <td style="text-align:right">
+                            <span></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </main>
     </div>
 </body>
