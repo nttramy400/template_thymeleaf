@@ -452,8 +452,6 @@
                     <span th:text="${dataReport?.reportDate}">reportDate</span>
 					<br/>
                     <span th:text="${dataReport?.reportTime}">reportDate</span>
-					<br/>
-					<span th:text="${dataReport?.username}"></span>
                 </div>
             </div>
         </div>
@@ -485,7 +483,7 @@
 	<div>
 
 	
-		<table cellspacing="0" cellpadding="0">
+		<table cellspacing="0" cellpadding="0" style="padding-bottom:20px;">
 			
             <thead>
 				<tr class="tabletitle">
@@ -502,7 +500,6 @@
 					<th style="width: 30px;">Chl.</th>
 					<th style="width: 45px;">Payment Mth.</th>
 					<th style="width: 45px;">Rate Code</th>
-					<th style="width: 45px;">Rms.</th>
 					<th style="width: 45px;">Mkt code</th>
 					<th style="width: 45px;">Src. code</th>
 					<th style="width: 45px;">Res. status</th>
@@ -529,7 +526,6 @@
 						<td th:text="${arrivalInfo?.numberOfChild}">numberOfChild</td>
 						<td th:text="${arrivalInfo?.paymentMethodCode}">paymentMethod</td>
 						<td th:text="${arrivalInfo?.rateCode}">rateCode</td>
-						<td th:text="${arrivalInfo?.rateAmount}">Rate Amount</td>
 						<td th:text="${arrivalInfo?.marketCode}">marketCode</td>
 						<td th:text="${arrivalInfo?.sourceCode}">sourceCode</td>
 						<td th:text="${arrivalInfo?.reservationStatus}">reservationStatus</td>
@@ -547,15 +543,22 @@
             </tfoot>
         </table>
 	</div>
-		<div>
-			<div class="filter-date" style="position: fixed; bottom: 5px; left:30px; text-align: right; padding: 0px; border: none; display: inline;">
+ 
+
+		<div style="right: 30px; position:fixed; bottom:5px;">
+			<span th:text="${username}">username</span>
+		</div>		
+    </main>
+</div>
+		<div style="position: fixed; left:30px; text-align: right; display: flex;">
+			<div >
 				<table>
 					<tr>
 						<td  rowspan="5" style="text-align: left; font-weight: bold;">Filter</td>
 					</tr>
 					<tr>
 					<td>
-						<span th:text="'Arrival From Date: '+ ${dataReport?.filter?.fromDate}+ ' &lt;br Arrival To Date ' + ${dataReport?.filter?.toDate}"> from date - to date </span>							
+						<span th:text="'From Date: '+ ${dataReport?.filter?.fromDate}+ 'To Date ' + ${dataReport?.filter?.toDate}"> from date - to date </span>							
 						<span th:text="'Bussiness Date '+ ${dataReport?.businesDate}">Bussiness Date</span>	
 						<br/>						
 						<span th:if="${dataReport?.filter?.roomTypeCodes != null}" th:text="'Room Types: '+ ${dataReport?.filter?.roomTypeCodes}"></span>							
@@ -569,8 +572,6 @@
 					</tr>	
 				</table>                
             </div>
-		</div>        
-    </main>
-</div>
+		</div>   
 </body>
 </html>
