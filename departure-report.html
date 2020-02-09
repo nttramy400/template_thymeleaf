@@ -459,7 +459,7 @@
             </div>
         </header>
         <main>
-            <table cellspacing="0" cellpadding="0">
+            <table cellspacing="0" cellpadding="0" style="margin-top:30px;">
                 <thead>
                     <tr class="tabletitle">
                         <th style="text-align: right; width: 20px">Room No.</th>
@@ -480,48 +480,51 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="content" th:each="report_info: ${reportInfo}">
-                        <td></td>
-                        <td
-                            th:text="${guestProfileCount > 0 ? report_info.guestProfiles[0]?.lastName != null ? report_info.guestProfiles[0]?.lastName +', ' + report_info.guestProfiles[0]?.firstName : '' : ''}">
-                        </td>
-                        <td
-                            th:text="${report_info.travelAgentProfileName != '' ? report_info.travelAgentProfileName : report_info.companyProfileName}">
-                        </td>
-                        <td th:text="${guestProfileCount > 0 ? report_info.guestProfiles[0].vipCode : ''}">
-                        </td>
-                        <td th:text="${report_info.arrivalDateFormat}">04-09-2019</td>
-                        <td th:text="${report_info.departureDateFormat}">05-09-2019
-                        </td>
-                        <td th:text="${report_info?.numberOfAdult}">0</td>
-                        <td th:text="${report_info?.numberOfChild}">0</td>
-                        <td></td>
-                        <td th:text="${report_info?.roomType}"></td>
-                        <td></td>
-                        <td></td>
-                        <td th:text="${report_info?.status}">Arrival</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    <div th:remove="tag" th:each="report_info: ${reportInfo}"
+                        th:with="guestProfileCount=${report_info.guestProfiles.size()}, rowSpanColumn=${report_info?.numberOfAdult > report_info.guestProfiles.size() ? report_info.guestProfiles.size() + 1 : report_info.guestProfiles.size()}">
+                        <tr th:classappend="${report_infoStat.count % 2} == 0 ? odd : even">
+                            <td ></td>
+                            <td
+                                th:text="${guestProfileCount > 0 ? report_info.guestProfiles[0]?.lastName != null ? report_info.guestProfiles[0]?.lastName +', ' + report_info.guestProfiles[0]?.firstName : '' : ''}">
+                            </td>
+                            <td th:rowspan="${rowSpanColumn}"
+                                th:text="${report_info.travelAgentProfileName != '' ? report_info.travelAgentProfileName : report_info.companyProfileName}">
+                            </td>
+                            <td th:text="${guestProfileCount > 0 ? report_info.guestProfiles[0].vipCode : ''}">
+                            </td>
+                            <td th:rowspan="${rowSpanColumn}" th:text="${report_info.arrivalDateFormat}">04-09-2019</td>
+                            <td th:rowspan="${rowSpanColumn}" th:text="${report_info.departureDateFormat}">05-09-2019
+                            </td>
+                            <td th:rowspan="${rowSpanColumn}" th:text="${report_info?.numberOfAdult}">0</td>
+                            <td th:rowspan="${rowSpanColumn}" th:text="${report_info?.numberOfChild}">0</td>
+                            <td th:rowspan="${rowSpanColumn}"></td>
+                            <td th:rowspan="${rowSpanColumn}" th:text="${report_info?.roomType}"></td>
+                            <td th:rowspan="${rowSpanColumn}"></td>
+                            <td th:rowspan="${rowSpanColumn}"></td>
+                            <td th:rowspan="${rowSpanColumn}" th:text="${report_info?.status}">Arrival</td>
+                            <td th:rowspan="${rowSpanColumn}"></td>
+                            <td th:rowspan="${rowSpanColumn}"></td>
+                        </tr>
+                    </div>
                 </tbody>
             </table>
-            <div style="left:30px; text-align: left; border: none;">
-                <table style="margin-top:30px">
-                    <tr>
-                        <td rowspan="5" style="text-align: left; font-weight: bold;">Filter</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span th:text="'From Date: '+ ${fromDateFormat}+ ' To Date ' + ${toDateFormat}">
-                                from date - to date </span>
-                        </td>
-                        <td style="text-align:right">
-                            <span></span>
-                        </td>
-                    </tr>
-                </table>
-            </div>
         </main>
+        <div style="left:30px; text-align: left; border: none;">
+            <table style="margin-top:30px">
+                <tr>
+                    <td rowspan="5" style="width:30px; text-align: left; font-weight: bold;">Filter</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span th:text="'From Date: '+ ${fromDateFormat}+ ' To Date ' + ${toDateFormat}"> from date -
+                            to date </span>
+                    </td>
+                    <td style="text-align:right">
+                        <span th:text="${username}">user name</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 
