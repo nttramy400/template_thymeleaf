@@ -187,13 +187,18 @@
             width: 20%;
             text-align: right;
         }
+
+        .report-date div {
+            padding-top: 65px;
+        }
+
         header .page-title {
             position: absolute;
-            margin-top: 20px;
+            top: 66px;
+            width: 100%;
             text-align: center;
             font-size: 2.5em;
             font-family: 'Playfair Display', serif;
-            color: #3E4345;
         }
     </style>
 </head>
@@ -212,9 +217,9 @@
                 <div class="report-date">
                     <div>
                         <span th:text="${reportDate}">reportDate</span>
-                        <br/>
+                        <br />
                         <span th:text="${reportTime}">reportDate</span>
-                    </div>			
+                    </div>
                 </div>
             </div>
         </header>
