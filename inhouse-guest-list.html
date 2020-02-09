@@ -425,7 +425,7 @@
           text-align: left;
           border-bottom: 1px solid #000;
        }
-       table tbody > :nth-child(odd) {
+       table tbody > tr:nth-child(odd) {
             background-color:#eee;
         }
     </style>
@@ -472,7 +472,8 @@
 				</tr>
             </thead>
 			
-            <tbody class="content" th:each="report_info:${reportInfo}">
+            <tbody>
+                <tr class="content" th:each="report_info:${reportInfo}">
 						<td th:text="${report_info?.roomName}">roomName</td>
                         <td>
                             <div th:text="${report_info?.mainGuestProfileName}"/>
@@ -492,6 +493,7 @@
                         <td th:text="${report_info?.numberOfChild}">numberOfChild</td>
                         <td th:text="${report_info?.paymentMethod}">paymentMethod</td>
                         <td th:text="${report_info?.rateCode}">rateCode</td>	
+                </tr>		
             </tbody>
         </table>
 	</div>
