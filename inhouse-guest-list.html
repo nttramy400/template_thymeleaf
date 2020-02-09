@@ -441,17 +441,17 @@
 	
 	<div class="header-container">
             <div class="header-logo">
-                <img th:src="${data?.logo}" alt="Logo" />
-                <p class="property-name" th:text="${data?.propertyName}">${data?.propertyName}</p>
+                <img th:src="${logo}" alt="Logo" />
+                <p class="property-name" th:text="${propertyName}">${propertyName}</p>
             </div>
             <div class="report-title">
                 <h1>Guest INH - By Room</h1>
             </div>
             <div class="report-date">
                 <div>
-                    <span th:text="${data?.reportDate}">${data?reportDate}</span>
+                    <span th:text="${reportDate}">${data?reportDate}</span>
 					<br/>
-                    <span th:text="${data?.reportTime}">${dataReport?reportTime}</span>
+                    <span th:text="${reportTime}">${dataReport?reportTime}</span>
                 </div>
 
             </div>
@@ -477,7 +477,7 @@
 				</tr>
             </thead>
 			
-            <tbody th:each="report_info:${data?.reportInfo}">
+            <tbody th:each="report_info:${reportInfo}">
 						<td th:text="${reportInfo?.roomName}">roomName</td>
                         <td>
                             <span th:text="${reportInfo?.mainGuestProfileName}+ ' &lt;br' ${reportInfo?.vipLevel}">mainGuestProfileName <br/> vipLevel</span>
@@ -498,8 +498,8 @@
 	</div>
 		<div>
 			<div >
-                    <div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: ' + ${data?.fromDateFormat}
-      + ' - ' + ${data?.toDateFormat}">
+                    <div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
+      + ' - ' + ${toDateFormat}">
                     </div>
             </div>
 		</div>        
