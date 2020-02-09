@@ -18,306 +18,319 @@
         <div class="reservation-detail" style="padding: 10px;">
             <div style="display: flex;">
                 <div style="float: left; width: 20%;">
-                    <img style="width: 50px;" src="https://s3.ap-southeast-1.amazonaws.com/statics.stg.cloudhms.io/customer-files/37643830-3838-3335-2d35-6464352d3863/2020/01/9/152828-a7ed5e5d-4852-41c5-9293-67917dfcde31.jpg" alt="Logo" />
-                    <p style="color: #3A559F;font-weight: bold;" >Vinpearl</p>
+                    <img style="width: 50px;"
+                        src="https://s3.ap-southeast-1.amazonaws.com/statics.stg.cloudhms.io/customer-files/37643830-3838-3335-2d35-6464352d3863/2020/01/9/152828-a7ed5e5d-4852-41c5-9293-67917dfcde31.jpg"
+                        alt="Logo" />
+                    <p style="color: #3A559F;font-weight: bold;">Vinpearl</p>
+                    <p class="property-name" th:text="${dataReport?.propertyName}">${data?.propertyName}</p>
                 </div>
                 <h4 style="text-align: center;"> GUEST REGISTRATION FORM / PHIẾU ĐĂNG KÍ TẠM TRÚ
                 </h4>
             </div>
-                <table style="width: 100%; border: 1px solid black; border-collapse: collapse; display: flex; margin-bottom: 5px;"
-                    class="booking-confirm-table" width="100%">
-                    <tbody>
-                        <tr>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Tittle / Quý danh</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                                valign="middle">First Name / Tên</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 200px; text-align: center;"
-                                valign="middle">Last Name / Họ</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                                valign="middle">Confirmation<br>Số đặt phòng</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Room rate/Night<br>Giá phòng/đêm</th>
-                        </tr>
-                        <tr>
-                            <td class="text-center"
-                                style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">Mr</td>
-                            <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">
-                                Hải Trang</td>
-                            <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">
-                                Ngọc</td>
-                            <td class="text-center"
-                                style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">10022</td>
-                            <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">
-                                1.000.000 ₫</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2"
-                                style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Number of guest / Số lượng khách </th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Advance Deposit<br> Thanh toán trước VND</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 160px; text-align: center;"
-                                valign="middle">Room Type<br> Loại phòng</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Room No / Số phòng</th>
-                        </tr>
-                        <tr>
+            <table
+                style="width: 100%; border: 1px solid black; border-collapse: collapse; display: flex; margin-bottom: 5px;"
+                class="booking-confirm-table" width="100%">
+                <tbody>
+                    <tr>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Title / Quý danh</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
+                            valign="middle">First Name / Tên</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 200px; text-align: center;"
+                            valign="middle">Last Name / Họ</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
+                            valign="middle">Confirmation<br>Số đặt phòng</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Room rate/Night<br>Giá phòng/đêm</th>
+                    </tr>
+                    <tr>
+                        <td class="text-center"
+                            style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle"></td>
+                        <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.fullName}">
+                            Hải Trang</td>
+                        <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.fullName}">
+                            Ngọc</td>
+                        <td class="text-center"
+                            style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.confirmationNumber}">1102</td>
+                        <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.total}">
+                            1.000.000 ₫</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"
+                            style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Number of guest / Số lượng khách </th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Advance Deposit<br> Thanh toán trước VND</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 160px; text-align: center;"
+                            valign="middle">Room Type<br> Loại phòng</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Room No / Số phòng</th>
+                    </tr>
+                    <tr>
 
-                            <td style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Adults / Người lớn</td>
-                            <td style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                                valign="middle">Children / Trẻ em</td>
-                            <td rowspan="2"
-                                style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">
-                                Ngọc Ngà Châu Báu</td>
-                            <td rowspan="2"
-                                style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                                valign="middle">Visa & Master Card</td>
-                            <td rowspan="2"
-                                style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">100000$ </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"
-                                style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">2.</td>
-                            <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">
-                                1.</td>
-                        </tr>
-                        <tr>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Arrival / Ngày đến</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                                valign="middle">Departure / Ngày đi</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 200px; text-align: center;"
-                                valign="middle">Nationality / Quốc tịch</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                                valign="middle">Date of Birth<br> Ngày sinh</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Passport number<br> Số hộ chiếu / CMND</th>
-                        </tr>
-                        <tr>
-                            <td class="text-center"
-                                style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">14-01-20</td>
-                            <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">
-                                15-01-20</td>
-                            <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">
-                                Viet Nam</td>
-                            <td class="text-center"
-                                style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">14-01-20</td>
-                            <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
-                                valign="middle">
-                                13204392</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2"
-                                style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Address / Địa chỉ</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                                valign="middle">Email Address / Địa chỉ mail</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 200px; text-align: center;"
-                                valign="middle">Contact number<br> Số điện thoại</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Occupation<br> Nghề nghiệp</th>
-                        </tr>
-                        <tr>
-                            <th colspan="2"
-                                style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">99 Đỗ Xuân Hợp, Phước Long B, Q 9, HCM</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
-                                valign="middle">Hula@gmail.com</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 200px; text-align: center;"
-                                valign="middle">1010201201</th>
-                            <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
-                                valign="middle">Đua Xe</th>
-                        </tr>
+                        <td style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Adults / Người lớn</td>
+                        <td style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
+                            valign="middle">Children / Trẻ em</td>
+                        <td rowspan="2"
+                            style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle"> </td>
+                        <td rowspan="2"
+                            style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
+                            valign="middle" th:text="${data?.roomTypeName}"></td>
+                        <td rowspan="2"
+                            style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle" th:text="${data?.roomNumber}">KDLO </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"
+                            style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.numberOfGuests}"></td>
+                        <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.numberOfNights}"> child</td>
+                    </tr>
+                    <tr>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Arrival / Ngày đến</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
+                            valign="middle">Departure / Ngày đi</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 200px; text-align: center;"
+                            valign="middle">Nationality / Quốc tịch</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
+                            valign="middle">Date of Birth<br> Ngày sinh</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Passport number<br> Số hộ chiếu / CMND</th>
+                    </tr>
+                    <tr>
+                        <td class="text-center"
+                            style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.arrivalDate}">14-01-20</td>
+                        <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.departureDate}">
+                            15-01-20</td>
+                        <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.nationality}">
+                            Viet Nam</td>
+                        <td class="text-center"
+                            style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.departureDate}">14-01-20</td>
+                        <td style="vertical-align: middle; text-align: center; padding: 5px; border: 1px solid black;"
+                            valign="middle" th:text="${data?.idCard}">
+                            13204392</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"
+                            style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Address / Địa chỉ</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
+                            valign="middle">Email Address / Địa chỉ mail</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 200px; text-align: center;"
+                            valign="middle">Contact number<br> Số điện thoại</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">Occupation<br> Nghề nghiệp</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"
+                            style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle">5 Bà Triệu, Hoàn kiếm, Hà Nội</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 200px; text-align: center;"
+                            valign="middle" th:text="${data?.email}">Hula@gmail.com</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black;width: 200px; text-align: center;"
+                            valign="middle" th:text="${data?.phone}">1010201201</th>
+                        <th style="font-weight: bold; vertical-align: middle; padding: 5px; border: 1px solid black; width: 160px; text-align: center;"
+                            valign="middle" th:text="${data?.idCard}">Đua Xe</th>
+                    </tr>
 
-                    </tbody>
-                </table>
-                <form>
-                    <div class="form-group row" style="margin-bottom: 5px; margin-top: 5px;">
-                        <label for="comPany" class="col-md-4 col-form-label">Company / Công ty:</label>
-                        <label for="staticEmail" class="col-md-4 col-form-label">Adayroi</label>
-                        <label for="inputPassword" class="col-sm-12 col-form-label">My Account will be settled by / Các
-                            khoản chi phí của tôi sẽ được thanh toán dưới hình thức:</label>
+                </tbody>
+            </table>
+            <form>
+                <div class="form-group row" style="margin-bottom: 5px; margin-top: 5px;">
+                    <label for="comPany" class="col-md-4 col-form-label">Company / Công ty:</label>
+                    <label for="staticEmail" class="col-md-8 col-form-label" th:text="${data?.company}">Công ty cổ phần
+                        Hoàng Anh Gia Lai </label>
+                    <label for="inputPassword" class="col-sm-12 col-form-label">My Account will be settled by / Các
+                        khoản chi phí của tôi sẽ được thanh toán dưới hình thức:</label>
+                </div>
+                <div style="display: flex; margin-bottom: 10px; margin-left: 35px;">
+                    <div class="form-check form-check-inline" style="margin-right: 10px;">
+                        <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option1">
+                        <label class="form-check-label" for="inlinecheckbox1">Cash / Tiền mặt</label>
                     </div>
-                    <div style="display: flex; margin-bottom: 10px; margin-left: 35px;">
-                        <div class="form-check form-check-inline" style="margin-right: 10px;">
-                            <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option1">
-                            <label class="form-check-label" for="inlinecheckbox1">Cash / Tiền mặt</label>
-                        </div>
-                        <div class="form-check form-check-inline" style="margin-right: 10px;">
-                            <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option2">
-                            <label class="form-check-label" for="inlinecheckbox2">Amex</label>
-                        </div>
-                        <div class="form-check form-check-inline" style="margin-right: 10px;">
-                            <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option3">
-                            <label class="form-check-label" for="inlinecheckbox3">Visa</label>
-                        </div>
-                        <div class="form-check form-check-inline" style="margin-right: 10px;">
-                            <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option4">
-                            <label class="form-check-label" for="inlinecheckbox4">Master</label>
-                        </div>
-                        <div class="form-check form-check-inline" style="margin-right: 10px;">
-                            <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option5">
-                            <label class="form-check-label" for="inlinecheckbox5">JCB</label>
-                        </div>
-                        <div class="form-check form-check-inline" style="margin-right: 10px;">
-                            <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option6">
-                            <label class="form-check-label" for="inlinecheckbox6">Others / Khác</label>
-                        </div>
-                        <div class="form-check form-check-inline" style="margin-right: 10px;">
-                            <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option">
-                            <label class="form-check-label" for="inlinecheckbox7">Voucher</label>
-                        </div>
+                    <div class="form-check form-check-inline" style="margin-right: 10px;">
+                        <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option2">
+                        <label class="form-check-label" for="inlinecheckbox2">AMEX</label>
                     </div>
-                    <div class="form-group row " style="display: flex; margin-bottom: 5px !important;">
-                        <label for="comPany" class="col-md-4 col-form-label">Cresit Card No / Số thẻ tín dụng:</label>
-                        <label for="staticEmail" class="col-md-8 col-form-label"
-                            style="border-bottom: solid 1px; width: 400px;"></label>
+                    <div class="form-check form-check-inline" style="margin-right: 10px;">
+                        <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option3">
+                        <label class="form-check-label" for="inlinecheckbox3">Visa</label>
+                    </div>
+                    <div class="form-check form-check-inline" style="margin-right: 10px;">
+                        <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option4">
+                        <label class="form-check-label" for="inlinecheckbox4">Master</label>
+                    </div>
+                    <div class="form-check form-check-inline" style="margin-right: 10px;">
+                        <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option5">
+                        <label class="form-check-label" for="inlinecheckbox5">Diners</label>
+                    </div>
+                    <div class="form-check form-check-inline" style="margin-right: 10px;">
+                        <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option5">
+                        <label class="form-check-label" for="inlinecheckbox5">JCB</label>
+                    </div>
+                    <div class="form-check form-check-inline" style="margin-right: 10px;">
+                        <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option6">
+                        <label class="form-check-label" for="inlinecheckbox6">Others / Khác</label>
+                    </div>
+                    <div class="form-check form-check-inline" style="margin-right: 10px;">
+                        <input class="form-check-input" type="checkbox" name="inlinecheckbox" value="option">
+                        <label class="form-check-label" for="inlinecheckbox7">Voucher</label>
+                    </div>
+                </div>
+                <div class="form-group row " style="display: flex; margin-bottom: 5px !important;">
+                    <label for="comPany" class="col-md-4 col-form-label">Credit Card No / Số thẻ tín dụng:</label>
+                    <label for="staticEmail" class="col-md-8 col-form-label"
+                        style="border-bottom: solid 1px; width: 400px;" th:text="${data?.idCard}"></label>
 
-                    </div>
-                    <div class="form-group row" style="display: flex; margin-bottom: 5px !important;">
-                        <label for="comPany" class="col-md-4 col-form-label">Voucher No / Số voucher:</label>
-                        <label for="staticEmail" class="col-md-4 col-form-label"
-                            style="border-bottom: solid 1px; width: 400px;"></label>
-                    </div>
-                </form>
-                <hr style="border: solid 1px; margin-bottom: 5px; margin-top: 5px"><b style="font-weight: bold;">
+                </div>
+                <div class="form-group row" style="display: flex; margin-bottom: 5px !important;">
+                    <label for="comPany" class="col-md-4 col-form-label">Voucher No / Số voucher:</label>
+                    <label for="staticEmail" class="col-md-4 col-form-label"
+                        style="border-bottom: solid 1px; width: 400px;" th:text="${data?.idCard}"></label>
+                </div>
+            </form>
+            <hr style="border: solid 1px; margin-bottom: 5px; margin-top: 5px"><b style="font-weight: bold;">
+                <p style="text-align: center; font-size: 8px; margin-bottom: 5px;">
+                    MONEY, JEWELLERY AND OTHER VALUABLE ITEMS SHOULD BE DEPOSITED IN THE SAFETY BOX PROVIDED IN THE
+                    ROOM. I AGREE NOT TO HOLD THE HOTEL LIABLE FOR LOSS OF CASH AND/ OR VALUABLES KEPT IN MY ROOM,
+                    SHOULD I DECIDE AGAINST USING THE SAFE DEPOSIT BOX. I ALSO AGREE TO BE PERSONALLY LIABLE IF THE
+                    INDICATED PERSON, FIRM, OR CORPORATION FAILS TO PAY ANY OF THE CHARGES INCURRED AND I SHALL MAKE
+                    IMMEDIATE PAYMENT DIRECT TO THE HOTEL. VINPEARL HOTEL TAY NINH WILL NOT BE RESPONSIBLE IN CASE
+                    OF ANY LOSS, DAMAGE OR INJURY SUFFERED AT THE PROPERTY.
+                </p>
+                <hr style="border: dotted 1px;margin-bottom: 5px; margin-top: 5px; width: 400px;"><b
+                    style="font-weight: bold;">
                     <p style="text-align: center; font-size: 8px; margin-bottom: 5px;">
-                        MONEY, JEWELLERY AND OTHER VALUABLE ITEMS SHOULD BE DEPOSITED IN THE SAFETY BOX PROVIDED IN THE
-                        ROOM. I AGREE NOT TO HOLD THE HOTEL LIABLE FOR LOSS OF CASH AND/ OR VALUABLES KEPT IN MY ROOM,
-                        SHOULD I DECIDE AGAINST USING THE SAFE DEPOSIT BOX. I ALSO AGREE TO BE PERSONALLY LIABLE IF THE
-                        INDICATED PERSON, FIRM, OR CORPORATION FAILS TO PAY ANY OF THE CHARGES INCURRED AND I SHALL MAKE
-                        IMMEDIATE PAYMENT DIRECT TO THE HOTEL. VINPEARL HOTEL TAY NINH WILL NOT BE RESPONSIBLE IN CASE
-                        OF ANY LOSS, DAMAGE OR INJURY SUFFERED AT THE PROPERTY.
+                        STANDARD CHECK OUT TIME IS AT 12:00 NOON
+                        SMOKING IS NOT ALLOWED INSIDE THE ROOMS AND NON-SMOKING AREAS OF THE HOTEL. I ACCEPT TO GET
+                        A
+                        PENALTY OF 3,000,000 VND/ CASE IF BREEAKING THIS RULE.
+                        ADULT GUESTS ARE RESPONSIBLE TO SUPERVISE THEIR CHILDREN IN BALCONY AND/OR ANY DANGEROUS
+                        AREA.
+                        TOUR AND SPORT ENTERTINMENTS ACTIVITIES (FISHING, SNORKELING, SCUBA DIVING, JESTKY WATER
+                        SKIING,
+                        PARASAILING, BANANA BOAT, WONDER WHEEL, …), BIKE RENTAL IS PROVIDED BY VINPEARL’S
+                        INDEPENDENT
+                        PARTNERS. VINPEARL SHALL NOT BE LIABLE FOR ANY DAMAGE, LOSS RELATING TO GUEST WHEN USING
+                        SUCH
+                        SERVICE.
+                        PLEASE KINDLY CONTACT VINPEARL FOR OUR SUPPORT IF YOU HAVE ANY CLAIM ON SERVICE PROVIDER.
+                        TIEN MAT, TRANG SUC VA TAT CA NHUNG TAI SAN CO GIA TRI CAN DUOC CAT GIU O KET SAT TRONG
+                        PHONG.
+                        TOI DONG Y SE KHONG TRUY CUU TRACH NHIEM CUA KHACH SAN VE VIEC MAT TIEN HAY BAT CU TAI SAN
+                        CO
+                        GIA TRI
+                        DUOC DE NGOAI KET SAT. TOI DONG Y THANH TOAN TAT CA CAC CHI PHI CHO KHACH SAN TRONG TRUONG
+                        HOP
+                        CONG TY/ CONG TY DU LICH/ NGUOI DAT PHONG CUA TOI KHONG THE THANH TOAN.
                     </p>
                     <hr style="border: dotted 1px;margin-bottom: 5px; margin-top: 5px; width: 400px;"><b
                         style="font-weight: bold;">
                         <p style="text-align: center; font-size: 8px; margin-bottom: 5px;">
-                            STANDARD CHECK OUT TIME IS AT 12:00 NOON
-                            SMOKING IS NOT ALLOWED INSIDE THE ROOMS AND NON-SMOKING AREAS OF THE HOTEL. I ACCEPT TO GET
-                            A
-                            PENALTY OF 3,000,000 VND/ CASE IF BREEAKING THIS RULE.
-                            ADULT GUESTS ARE RESPONSIBLE TO SUPERVISE THEIR CHILDREN IN BALCONY AND/OR ANY DANGEROUS
-                            AREA.
-                            TOUR AND SPORT ENTERTINMENTS ACTIVITIES (FISHING, SNORKELING, SCUBA DIVING, JESTKY WATER
-                            SKIING,
-                            PARASAILING, BANANA BOAT, WONDER WHEEL, …), BIKE RENTAL IS PROVIDED BY VINPEARL’S
-                            INDEPENDENT
-                            PARTNERS. VINPEARL SHALL NOT BE LIABLE FOR ANY DAMAGE, LOSS RELATING TO GUEST WHEN USING
-                            SUCH
-                            SERVICE.
-                            PLEASE KINDLY CONTACT VINPEARL FOR OUR SUPPORT IF YOU HAVE ANY CLAIM ON SERVICE PROVIDER.
-                            TIEN MAT, TRANG SUC VA TAT CA NHUNG TAI SAN CO GIA TRI CAN DUOC CAT GIU O KET SAT TRONG
-                            PHONG.
-                            TOI DONG Y SE KHONG TRUY CUU TRACH NHIEM CUA KHACH SAN VE VIEC MAT TIEN HAY BAT CU TAI SAN
-                            CO
-                            GIA TRI
-                            DUOC DE NGOAI KET SAT. TOI DONG Y THANH TOAN TAT CA CAC CHI PHI CHO KHACH SAN TRONG TRUONG
-                            HOP
-                            CONG TY/ CONG TY DU LICH/ NGUOI DAT PHONG CUA TOI KHONG THE THANH TOAN.
+                            GIO TRA PHONG QUY DINH LA 12 GIO TRUA
+                            KHONG DUOC HUT THUOC TRONG PHONG VA CAC KHU VUC KHONG CHO PHEP CUA KHACH SAN. TRONG
+                            TRUONG HOP
+                            VI PHAM, TOI CHAP THUAN NOP PHAT 3,000,000VND/ LAN THEO QUY DINH CUA KHACH SAN.
+                            KHACH NGUOI LON PHAI CHIU TRACH NHIEM GIAM SAT TRE EM NGOAI BAN CONG VA/ HOAC CAC KHU
+                            VUC NGUY
+                            HIEM KHAC. TOUR DU LICH VA CAC HOAT DONG THE THAO GIAI TRI (CAU CA, LAN BIEN, LAN BINH
+                            THO, MOTO
+                            NUOC, LUOT VAN, DU KEO, THUYEN CHUOI, BANH XE, …), THUE XE DUOC CUNG CAP BOI DOI TAC DOC
+                            LAP CUA
+                            VINPEARL. VINPEARL KHONG CHIU TRACH NHIEM LIEN QUAN DEN MAT MAT, THIET HAI CUA QUY KHACH
+                            KHI SU
+                            DUNG NHUNG DICH VU NAY. NEU KHACH CO KHIEU NAI DOI VOI DON VI CUNG CAP DICH VU, XIN VUI
+                            LONG
+                            LIEN HE VINPEARL DE DUOC HO TRO.
+
                         </p>
-                        <hr style="border: dotted 1px;margin-bottom: 5px; margin-top: 5px; width: 400px;"><b
+                        <hr style="border: solid 1px; margin-bottom: 5px; margin-top: 5px"><b
                             style="font-weight: bold;">
-                            <p style="text-align: center; font-size: 8px; margin-bottom: 5px;">
-                                GIO TRA PHONG QUY DINH LA 12 GIO TRUA
-                                KHONG DUOC HUT THUOC TRONG PHONG VA CAC KHU VUC KHONG CHO PHEP CUA KHACH SAN. TRONG
-                                TRUONG HOP
-                                VI PHAM, TOI CHAP THUAN NOP PHAT 3,000,000VND/ LAN THEO QUY DINH CUA KHACH SAN.
-                                KHACH NGUOI LON PHAI CHIU TRACH NHIEM GIAM SAT TRE EM NGOAI BAN CONG VA/ HOAC CAC KHU
-                                VUC NGUY
-                                HIEM KHAC. TOUR DU LICH VA CAC HOAT DONG THE THAO GIAI TRI (CAU CA, LAN BIEN, LAN BINH
-                                THO, MOTO
-                                NUOC, LUOT VAN, DU KEO, THUYEN CHUOI, BANH XE, …), THUE XE DUOC CUNG CAP BOI DOI TAC DOC
-                                LAP CUA
-                                VINPEARL. VINPEARL KHONG CHIU TRACH NHIEM LIEN QUAN DEN MAT MAT, THIET HAI CUA QUY KHACH
-                                KHI SU
-                                DUNG NHUNG DICH VU NAY. NEU KHACH CO KHIEU NAI DOI VOI DON VI CUNG CAP DICH VU, XIN VUI
-                                LONG
-                                LIEN HE VINPEARL DE DUOC HO TRO.
+                            <form>
+                                <div class="form-group row" style="margin-bottom: 5px; margin-top: 5px;">
+                                    <label for="comPany" class="col-md-10 col-form-label">Billing Authorization / Uỷ
+                                        quyền thanh toán </label>
+                                </div>
+                                <div style="display: flex; ">
+                                    <p style="word-wrap: break-word; margin-bottom: 5px;">
+                                        I _______________________ hereby authorize
+                                        __________________________________ charges made by the following guest(s) to
+                                        be placed on my account / Tôi _________________________ đồng ý thanh toán
+                                        các khoản chi phí
+                                        __________________________________ của những khách sau đây:
+                                    </p>
+                                </div>
+                                <div class="form-group row "
+                                    style="display: flex; margin-bottom: 5px; margin-top: 5px;">
+                                    <label for="comPany" class="col-md-4 col-form-label">Full name / Họ và
+                                        tên:</label>
+                                    <label for="staticEmail" class="col-md-8 col-form-label"
+                                        style="border-bottom: solid 1px; width: 400px;"
+                                        th:text="${data?.fullName}"></label>
+                                    <label for="comPany" class="col-md-4 col-form-label">Room No / Số phòng:</label>
+                                    <label for="staticEmail" class="col-md-8 col-form-label"
+                                        style="border-bottom: solid 1px; width: 400px; margin-right: 15px;"
+                                        th:text="${data?.roomNumber}"></label>
+                                </div>
+                                <div class="form-group row "
+                                    style="display: flex; margin-bottom: 5px; margin-top: 5px;">
+                                    <label for="comPany" class="col-md-4 col-form-label">Full name / Họ và
+                                        tên:</label>
+                                    <label for="staticEmail" class="col-md-8 col-form-label"
+                                        style="border-bottom: solid 1px; width: 400px;"></label>
+                                    <label for="comPany" class="col-md-4 col-form-label">Room No / Số phòng:</label>
+                                    <label for="staticEmail" class="col-md-4 col-form-label"
+                                        style="border-bottom: solid 1px; width: 400px;margin-right: 15px;"></label>
+                                </div>
+                            </form>
 
-                            </p>
-                            <hr style="border: solid 1px; margin-bottom: 5px; margin-top: 5px"><b style="font-weight: bold;">
-                                <form>
-                                    <div class="form-group row" style="margin-bottom: 5px; margin-top: 5px;">
-                                        <label for="comPany" class="col-md-12 col-form-label">Billing Authorization / Uỷ
-                                            quyền thanh toán </label>
-                                    </div>
-                                    <div style="display: flex; ">
-                                        <p style="word-wrap: break-word; margin-bottom: 5px; margin-top: 5px">
-                                            I _______________________ hereby authorize
-                                            __________________________________ charges made by the following guest(s) to
-                                            be placed on my account <br> Tôi _________________________ đồng ý thanh toán
-                                            các khoản chi phí
-                                            __________________________________ của những khách sau đây:
-                                        </p>
-                                    </div>
-                                    <div class="form-group row " style="display: flex; margin-bottom: 5px; margin-top: 5px;">
-                                        <label for="comPany" class="col-md-4 col-form-label">Full name / Họ và
-                                            tên:</label>
-                                        <label for="staticEmail" class="col-md-8 col-form-label"
-                                            style="border-bottom: solid 1px; width: 400px;"></label>
-                                        <label for="comPany" class="col-md-4 col-form-label">Room No / Số phòng:</label>
-                                        <label for="staticEmail" class="col-md-8 col-form-label"
-                                            style="border-bottom: solid 1px; width: 400px; margin-right: 15px;"></label>
-                                    </div>
-                                    <div class="form-group row " style="display: flex; margin-bottom: 5px; margin-top: 5px;">
-                                        <label for="comPany" class="col-md-4 col-form-label">Full name / Họ và
-                                            tên:</label>
-                                        <label for="staticEmail" class="col-md-8 col-form-label"
-                                            style="border-bottom: solid 1px; width: 400px;"></label>
-                                        <label for="comPany" class="col-md-4 col-form-label">Room No / Số phòng:</label>
-                                        <label for="staticEmail" class="col-md-4 col-form-label"
-                                            style="border-bottom: solid 1px; width: 400px;margin-right: 15px;"></label>
-                                    </div>
-                                </form>
-
-                                <table class="table table-bordered" style="margin-bottom: 5px;">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" style="width: 30%; font-size: 10px;">GUEST SIGNATURE /
-                                                Chữ kí của khách</th>
-                                            <th colspan="2" scope="col"
-                                                style="text-align: center; width: 70%; font-size: 10px;">CHECKED BY /
-                                                Kiểm
-                                                tra bởi
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" style="border-bottom: none;"></th>
-                                            <th scope="col" style="border-bottom: none; font-size: 10px;">RECEPTIONIST /
-                                                Lễ tân
-                                            </th>
-                                            <th scope="col" style="border-bottom: none; font-size: 10px;">SUPERVISOR /
-                                                Giám sát
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" style="border-top:none; font-size: 10px;">DATE / Ngày:</th>
-                                            <th scope="col" style="border-top:none; font-size: 10px;">DATE / Ngày:
-                                            </th>
-                                            <th scope="col" style="border-top:none; font-size: 10px;">DATE / Ngày:
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                </table>
+                            <table class="table table-bordered" style="margin-bottom: 5px;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 30%; font-size: 10px;">GUEST SIGNATURE /
+                                            Chữ ký của khách</th>
+                                        <th colspan="2" scope="col"
+                                            style="text-align: center; width: 70%; font-size: 10px;">CHECKED BY /
+                                            Kiểm
+                                            tra bởi
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="border-bottom: none;"><img
+                                                th:src="${data?.srcSignatureImg}" /></th>
+                                        <th scope="col" style="border-bottom: none; font-size: 10px;">RECEPTIONIST /
+                                            Lễ tân
+                                        </th>
+                                        <th scope="col" style="border-bottom: none; font-size: 10px;">SUPERVISOR /
+                                            Giám sát
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="border-top:none; font-size: 10px;">DATE / Ngày:</th>
+                                        <th scope="col" style="border-top:none; font-size: 10px;">DATE / Ngày:
+                                        </th>
+                                        <th scope="col" style="border-top:none; font-size: 10px;">DATE / Ngày:
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
         </div>
     </div>
 </body>
