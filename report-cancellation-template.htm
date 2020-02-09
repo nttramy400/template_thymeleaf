@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            font-weight: normal;
+            font-style: normal;
+            src: url(https://raw.githubusercontent.com/IBM/plex/master/IBM-Plex-Sans/fonts/complete/ttf/IBMPlexSans-Light.ttf);
+        }
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            font-weight: bold;
+            font-style: normal;
+            src: url(https://raw.githubusercontent.com/IBM/plex/master/IBM-Plex-Sans/fonts/complete/ttf/IBMPlexSans-Bold.ttf);
+        }
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: normal;
+            font-style: normal;
+            src: url(http://themes.googleusercontent.com/static/fonts/playfairdisplay/v7/2NBgzUtEeyB-Xtpr9bm1Cczai8e7xzqnKiVb1EwOy0E.ttf);
+        }
+        @page {
+            margin: 20px;
+            margin-bottom: 30px;
+            size: A4 landscape;
+            font-family: 'IBM Plex Sans', sans-serif;
+            @bottom-center {
+                font-family: 'IBM Plex Sans', sans-serif;
+                content: 'Page ' counter(page);
+                font-size: 12px;
+            }
+        }
+        html, body {
+            font-size: 10px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: #000000;
+        }
+        .container {
+            display: block;
+            min-height: 90vh;
+            padding: 1.5em 3em;
+        }
+        header {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        header img {
+            height: 6em;
+            display: block;
+            margin-bottom: 0.7em;
+        }
+        header .page-title {
+            margin: auto;
+            font-family: 'Playfair Display', serif;
+            color: #000000;
+            text-transform: uppercase;
+            font-size: 26px;
+            margin-bottom: -3px;
+            margin-top: -32px;
+            text-align: center;
+        }
+        .logo .logo-title {
+            color: #2B3A8B;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        footer {
+            text-align: center;
+        }
+        footer .page-number {
+            color: #919699;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+        }
+        main {
+            width: 100%;
+            height: 100%;
+        }
+        main .report-info {
+            margin: 3.3em 0;
+        }
+        table {
+            border-collapse: separate;
+            width: 100%;
+            border: 0.1px solid black;
+        }
+        table, td {
+            border: 0.1px solid black;
+        }
+        th, td {
+            padding: 0.85em;
+            font-style: normal;
+            font-weight: normal;
+            border: 0.1px solid black;
+        }
+        th {
+            text-align: left;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            <div style="display: inline-block; width: 33.33%;">
+                <img th:src="${logo}"/>
+                <span class="logo-title" th:text="${propertyName}">PHU QUOC PARADISE RESORT &amp; VILLAS</span>
+            </div>
+            <div style="display: inline-block; width: 33.33%;">
+                <h1 class="page-title" th:text="${reportName}">CANCELLATION LIST</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <table class="report-info" cellspacing="0" cellpadding="0" style="border: none; background-color: white;"><tr>
+            <td class="filter-date" style="background-color: white; text-align: left; padding: 0px; border: none;" th:text="'Filter: ' + ${fromDateFormat}
+      + ' - ' + ${toDateFormat}">
+                Filter: 01/06/19 - 09/06/19
+            </td>
+            <td class="report-date" style="background-color: white;text-align: right;padding: 0px;border: none" th:text="'Report Date: ' + ${reportDateFormat}">
+                Report Date: 12:00 - 09/06/19
+            </td>
+        </tr></table>
+
+        <table cellspacing="0" cellpadding="0">
+            <thead>
+            <tr>
+                <th style="text-align: right; width: 20px">No.</th>
+                <th style="width: 80px">Conf. No.</th>
+                <th style="width: 60px">CXL. No.</th>
+                <th style="width: 140px">Guest</th>
+                <th style="width: 130px">Travel Agent / Company</th>
+                <th style="width: 35px">R.Type</th>
+                <th style="width: 60px">Arrival</th>
+                <th style="width: 60px">Departure</th>
+                <th style="width: 30px">CXL Reason</th>
+                <th style="width: 70px">Reference</th>
+                <th style="width: 90px">Cancelled At</th>
+                <th style="text-align: right; width: 40px">Total Rate</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="report_info: ${reportInfo}">
+                <td style="text-align: right;" th:text="${report_infoStat.count}">1</td>
+                <td th:text="${report_info?.confirmationNumber}">Conf No</td>
+                <td th:text="${report_info?.cancellationNumber}">CXL No</td>
+                <td>
+                    <div th:each="guest_profile: ${report_info.guestProfiles}">
+                        <div th:text="${guest_profile.get('lastName')} != null ? ${guest_profile.get('lastName')} +', ' + ${guest_profile.get('firstName')}">FirstName</div>
+                    </div>
+                </td>
+                <td th:text="${report_info.travelAgentProfileName != '' ? report_info.travelAgentProfileName : report_info.companyProfileName}">Agent</td>
+                <td th:text="${report_info?.roomType}">Room Type</td>
+                <td th:text="${report_info?.arrivalDateFormat}">04-09-2019</td>
+                <td th:text="${report_info?.departureDateFormat}">05-09-2019</td>
+                <td th:text="${report_info?.reason}">reason</td>
+                <td th:text="${report_info?.reference}">reference</td>
+                <td th:text="${report_info?.cancelledAtFormat}">13:54 24/09/2019 </td>
+                <td style="text-align: right;" th:text="${report_info?.totalFormat}">2,250,000</td>
+            </tr>
+            <tr>
+                <td colspan="11" style="text-align: right; font-weight: bold;">TOTAL</td>
+                <td style="text-align: right; font-weight: bold;" th:text="${reportSummary?.totalFormat}">2,250,000</td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+</body>
+</html>
