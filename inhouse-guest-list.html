@@ -367,14 +367,6 @@
             /* font-size: 0.8em; */
         }
 
-        /*.property-name {
-             font-family: 'Ahihi', serif;
-        }*/
-        .property-name {
-            color: #3A559F;
-            font-weight: bold;
-        }
-
         .header-container {
             display: table;
             width: 100%;
@@ -391,10 +383,14 @@
 
         }
 
+        .property-name {
+            text-align: center;
+            line-height: 100px;
+        }
+
         .report-title {
             float: left;
             text-align: center;
-            line-height: 100px;
             width: 60%;
         }
 
@@ -409,7 +405,6 @@
         }
 
         .report-date div {
-            font-weight: bold;
             padding-top: 65px;
         }
 
@@ -442,10 +437,10 @@
 	<div class="header-container">
             <div class="header-logo">
                 <img th:src="${logo}" alt="Logo" />
-                <p class="property-name" th:text="${propertyName}">${propertyName}</p>
             </div>
             <div class="report-title">
-                <h1>Guest INH - By Room</h1>
+                <h1 th:text="${propertyName}">${propertyName}</h1>
+                <h1>GUEST INH - BY ROOM</h1>
             </div>
             <div class="report-date">
                 <div>
@@ -477,29 +472,34 @@
 				</tr>
             </thead>
 			
-            <tbody th:each="report_info:${reportInfo}">
+            <tbody class="content" th:each="report_info:${reportInfo}">
+                <tr>
 						<td th:text="${report_info?.roomName}">roomName</td>
                         <td>
-                            <span th:text="${report_info?.mainGuestProfileName}+ '&lt;br&gt;' + ${report_info?.vipLevel}">mainGuestProfileName <br/> vipLevel</span>
+                            <div th:text="${report_info?.mainGuestProfileName}"/>
+                            <br/>
+                            <div th:text="${report_info?.vipLevel}"/>
                         </td>
 						<td th:text="${report_info?.blockCode}">blockCode</td>
                         <td th:text="${report_info?.companyProfileName}">companyProfileName</td>
 						<td th:text="${report_info?.arrivalDateFormat}">arrivalDateFormat</td>
 						<td>
-                            <span th:text="${report_info?.departureDateFormat}+ ' &lt;br&gt;' + ${report_info?.etd}">departureDateFormat <br/> etd</span>
+                            <div th:text="${report_info?.departureDateFormat}"/>
+                            <br/>
+                            <div th:text="${report_info?.etd}"/>
                         </td>
 						<td th:text="${report_info?.roomType}">roomType</td>
 						<td th:text="${report_info?.numberOfAdult}">numberOfAdult</td>
                         <td th:text="${report_info?.numberOfChild}">numberOfChild</td>
                         <td th:text="${report_info?.paymentMethod}">paymentMethod</td>
-                        <td th:text="${report_info?.rateCode}">rateCode</td>			
+                        <td th:text="${report_info?.rateCode}">rateCode</td>	
+                </tr>		
             </tbody>
         </table>
 	</div>
 		<div>
 			<div >
-                    <div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
-      + ' - ' + ${toDateFormat}">
+                    <div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: '">
                     </div>
             </div>
 		</div>        
