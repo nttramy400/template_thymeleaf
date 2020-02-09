@@ -111,9 +111,13 @@
             /* margin-bottom: 2.1em; */
         }
 
-        main .report-info .filter-date {
+        main .filter-date {
             float: left;
         }
+
+        main .user-name {
+            float: right;
+        }   
 
         main .report-info .report-date {
             float: right;
@@ -384,8 +388,8 @@
         }
 
         .property-name {
-            text-align: center;
-            line-height: 100px;
+            color: #3A559F;
+            font-weight: bold;
         }
 
         .report-title {
@@ -437,9 +441,9 @@
 	<div class="header-container">
             <div class="header-logo">
                 <img th:src="${logo}" alt="Logo" />
+                <p class="property-name" th:text="${propertyName}">${dataReport?.propertyName}</p>
             </div>
             <div class="report-title">
-                <h1 th:text="${propertyName}">${propertyName}</h1>
                 <h1>GUEST INH - BY ROOM</h1>
             </div>
             <div class="report-date">
@@ -458,22 +462,22 @@
 		<table cellspacing="0" cellpadding="0">
             <thead>
 				<tr class="tabletitle">
-					<th style="width: 50px;">Room <br/> No.</th>
+					<th style="width: 50px;">Room No.</th>
 					<th style="width: 50px;">Name <br/> Vip</th>
-                    <th style="width: 50px;"></th>
-					<th style="width: 65px;">Company <br/> Travel Agent <br/> Source</th>
-					<th style="width: 45px;">Arr. <br/> Date</th>
-					<th style="wid th: 60px;">Dep. <br/> Date <br/> ETD</th>
-					<th style="width: 60px;">Room <br/> Type</th>
+                    <th style="width: 50px;">Block Code</th>
+					<th style="width: 65px;">Company <br/> Travel Agent</th>
+					<th style="width: 45px;">Arr. Date</th>
+					<th style="wid th: 60px;">Dep. Date <br/> ETD</th>
+					<th style="width: 60px;">Room Type</th>
 					<th style="width: 45px;">Adl.</th>
 					<th style="width: 30px;">Chl.</th>
-                    <th style="width: 30px;">Pay <br/> Mth.</th>
-                    <th style="width: 30px;">Rate <br/> Code</th>
+                    <th style="width: 30px;">Pay Mth.</th>
+                    <th style="width: 30px;">Rate Code</th>
 				</tr>
             </thead>
 			
-            <tbody class="content" th:each="report_info:${reportInfo}">
-                <tr>
+            <tbody>
+                <tr class="content" th:each="report_info:${reportInfo}">
 						<td th:text="${report_info?.roomName}">roomName</td>
                         <td>
                             <div th:text="${report_info?.mainGuestProfileName}"/>
@@ -500,6 +504,8 @@
 		<div>
 			<div >
                     <div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: '">
+                    </div>
+                    <div class="user-name" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="${propertyName}">
                     </div>
             </div>
 		</div>        
