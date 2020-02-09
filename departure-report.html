@@ -512,13 +512,9 @@
                     </tr>
                     <tr>
                         <td>
-                            <span
-                                th:text="'From Date: '+ ${report_info?.filter?.fromDate}+ ' To Date ' + ${report_info?.filter?.toDate}">
-                                from date - to date </span><br />
-                            <span th:if="${report_info?.filter?.sourceCodes != null}"
-                                th:text="'Source: '+ ${report_info?.filter?.sourceCodes}"></span> <br />
+                            <span th:text="'From Date: '+ ${fromDateFormat}+ ' To Date ' + ${toDateFormat}">
+                                from date - to date </span>
                         </td>
-
                         <td style="text-align:right">
                             <span></span>
                         </td>
