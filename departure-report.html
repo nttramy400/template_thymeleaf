@@ -504,11 +504,11 @@
                         <td th:rowspan="${rowSpanColumn}" th:text="${report_info?.numberOfInfant}">0</td>
                         <td th:rowspan="${rowSpanColumn}" th:text="${report_info?.status}">Arrival</td>
                     </tr>
-                    <tr th:classappend="${report_infoStat.count % 2} == 0 ? odd : even" th:each="guest_profile,stats: ${report_info.guestProfiles}" th:if="${!stats.first}">
+                    <!-- <tr th:classappend="${report_infoStat.count % 2} == 0 ? odd : even" th:each="guest_profile,stats: ${report_info.guestProfiles}" th:if="${!stats.first}">
                         <td th:text="${guest_profile.get('vipCode')}">Bahrain</td>
                         <td th:text="${guest_profile.get('country')}">Bahrain</td>
                         <td th:text="${guest_profile.get('lastName')} != null ? ${guest_profile.get('lastName')} +', ' + ${guest_profile.get('firstName')}">FirstName</td>
-                    </tr>
+                    </tr> -->
                     <tr th:classappend="${report_infoStat.count % 2} == 0 ? odd : even" th:if="${report_info?.numberOfAdult > report_info.guestProfiles.size()}">
                         <td></td>
                         <td></td>
@@ -526,7 +526,7 @@
             </table>
         </main>
         <div style="left:30px; text-align: left; border: none;">
-            <table style="margin-top:30px">
+            <table >
                 <tr>
                     <td rowspan="5" style="width:30px; text-align: left; font-weight: bold;">Filter</td>
                 </tr>
