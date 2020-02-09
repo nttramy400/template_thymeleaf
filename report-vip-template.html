@@ -441,7 +441,7 @@
     <header>
 		<div class="header-container">
             <div class="header-logo">
-                <img src="${logo}" alt="Logo" />
+                <img th:src="${logo}" alt="Logo" />
                 <p class="property-name" th:text="${propertyName}">${propertyName}</p>
             </div>
             <div>
@@ -475,8 +475,17 @@
                     <td th:text="${report_info?.bookingNumber}">bookingNumber</td>
                     <td th:text="${report_info?.roomNumber}">roomNumber</td>
                     <td th:text="${report_info?.reservationStatus}">reservationStatus</td>
-					<td th:text="${report_info?.guestNames}"> </td>
-					<td th:text="${report_info?.vipLevels}"> </td>
+					
+					<td>  
+						<ul style="list-style-type:none; margin-left:-35px;">
+						   <li th:each="guest : ${report_info.guestNames}" th:text="${guest}">guest</li>
+						</ul>
+					</td> 
+					<td>  
+						<ul style="list-style-type:none; margin-left:-35px;">
+						   <li th:each="vip : ${report_info.vipLevels}" th:text="${vip}">vip</li>
+						</ul>
+					</td> 
                     <td th:text="${report_info?.arrivalDate}">arrivalDate</td>
                     <td colspan="6" th:text="${report_info?.departureDate}">departureDate </td>
                 </tr>
