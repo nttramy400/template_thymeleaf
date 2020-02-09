@@ -409,7 +409,6 @@
         }
 
         .report-date div {
-            font-weight: bold;
             padding-top: 65px;
         }
 
@@ -445,7 +444,7 @@
                 <p class="property-name" th:text="${propertyName}">${propertyName}</p>
             </div>
             <div class="report-title">
-                <h1>Guest INH - By Room</h1>
+                <h1>GUEST INH - BY ROOM</h1>
             </div>
             <div class="report-date">
                 <div>
@@ -477,10 +476,12 @@
 				</tr>
             </thead>
 			
-            <tbody th:each="report_info:${reportInfo}">
+            <tbody class="content" th:each="report_info:${reportInfo}">
 						<td th:text="${report_info?.roomName}">roomName</td>
                         <td>
-                            <span th:text="${report_info?.mainGuestProfileName}+ '&lt;br&gt;' + ${report_info?.vipLevel}">mainGuestProfileName <br/> vipLevel</span>
+                            <div th:text="${report_info?.mainGuestProfileName}"/>
+                            <br/>
+                            <div th:text="${report_info?.vipLevel}"/>
                         </td>
 						<td th:text="${report_info?.blockCode}">blockCode</td>
                         <td th:text="${report_info?.companyProfileName}">companyProfileName</td>
