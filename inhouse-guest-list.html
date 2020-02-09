@@ -501,14 +501,15 @@
             </tbody>
         </table>
 	</div>
-		<div>
-			<div >
-                    <div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: '">
-                    </div>
-                    <div class="user-name" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="${propertyName}">
-                    </div>
+    <div>
+        <div >
+            <div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: '">
+
             </div>
-		</div>        
+            <div class="filter-date" style="position: fixed; bottom: 5px; right:30px; background-color: white; text-align: left; padding: 0px; border: none; display: inline;" th:text="${userName}">
+            </div>
+        </div>
+    </div>       
     </main>
 </div>
 </body>
