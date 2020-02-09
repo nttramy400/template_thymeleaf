@@ -480,13 +480,13 @@
             <tbody th:each="report_info:${reportInfo}">
 						<td th:text="${report_info?.roomName}">roomName</td>
                         <td>
-                            <span th:text="${report_info?.mainGuestProfileName}+ '&lt;br&gt;' ${report_info?.vipLevel}">mainGuestProfileName <br/> vipLevel</span>
+                            <span th:text="${report_info?.mainGuestProfileName}+ '&lt;br&gt;' + ${report_info?.vipLevel}">mainGuestProfileName <br/> vipLevel</span>
                         </td>
 						<td th:text="${report_info?.blockCode}">blockCode</td>
                         <td th:text="${report_info?.companyProfileName}">companyProfileName</td>
 						<td th:text="${report_info?.arrivalDateFormat}">arrivalDateFormat</td>
 						<td>
-                            <span th:text="${report_info?.departureDateFormat}+ ' &lt;br&gt;' ${report_info?.etd}">departureDateFormat <br/> etd</span>
+                            <span th:text="${report_info?.departureDateFormat}+ ' &lt;br&gt;' + ${report_info?.etd}">departureDateFormat <br/> etd</span>
                         </td>
 						<td th:text="${report_info?.roomType}">roomType</td>
 						<td th:text="${report_info?.numberOfAdult}">numberOfAdult</td>
