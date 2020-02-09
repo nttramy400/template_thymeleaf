@@ -479,7 +479,6 @@
 						<td th:text="${report_info?.roomName}">roomName</td>
                         <td>
                             <div th:text="${report_info?.mainGuestProfileName}"/>
-                            <br/>
                             <div th:text="${report_info?.vipLevel}"/>
                         </td>
 						<td th:text="${report_info?.blockCode}">blockCode</td>
@@ -499,9 +498,9 @@
         </table>
         <div>
             <div >
-                <div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;">Filter:
+                <div class="filter-date" style="position: fixed; bottom: 0px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;">Filter:
                 </div>
-                <div class="filter-date" style="position: fixed; bottom: 5px; right:30px; background-color: white; text-align: left; padding: 0px; border: none; display: inline;" th:text="${userName}">userName
+                <div class="filter-date" style="position: fixed; bottom: 0px; right:30px; background-color: white; text-align: left; padding: 0px; border: none; display: inline;" th:text="${userName}">userName
                 </div>
             </div>
         </div>
