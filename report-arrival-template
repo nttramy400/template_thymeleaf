@@ -515,7 +515,582 @@
 							<span th:text="${arrivalInfo?.etd}"> </span>
 						</td>
 						<td th:text="${arrivalInfo?.numberOfChild}">numberOfChild</td>
-						<td th:text="${arrivalInfo?.paymentMethodCode}">paymentMethod</td>
+						<td th:text="${arrivalInfo?.<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,900,700,500,300,100);
+
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            font-weight: normal;
+            font-style: normal;
+            src: url(https://raw.githubusercontent.com/IBM/plex/master/IBM-Plex-Sans/fonts/complete/ttf/IBMPlexSans-Light.ttf);
+        }
+
+        @font-face {
+            font-family: 'IBM Plex Sans';
+            font-weight: bold;
+            font-style: normal;
+            src: url(https://raw.githubusercontent.com/IBM/plex/master/IBM-Plex-Sans/fonts/complete/ttf/IBMPlexSans-Bold.ttf);
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            font-weight: normal;
+            font-style: normal;
+            src: url(http://themes.googleusercontent.com/static/fonts/playfairdisplay/v7/2NBgzUtEeyB-Xtpr9bm1Cczai8e7xzqnKiVb1EwOy0E.ttf);
+        }
+
+        @page {
+            size: 29.7cm 21cm;
+
+            @bottom-center {
+                content: 'Page 'counter(page);
+                color: #3E4345;
+            }
+        }
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            overflow-x: hidden;
+            font-size: 10px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            color: #3E4345;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 92vh;
+            padding: 1.5em 3em;
+        }
+
+        header {
+            margin-bottom: 3em;
+        }
+
+        header img {
+            width: 8.9em;
+            height: 5.6em;
+            display: block;
+            margin-bottom: 0.7em;
+        }
+
+        header .page-title {
+            position: absolute;
+            top: 66px;
+            width: 100%;
+            text-align: center;
+            font-size: 2.5em;
+            font-family: 'Playfair Display', serif;
+            color: #3E4345;
+        }
+
+        .logo .logo-title {
+            color: #3A559F;
+            font-weight: bold;
+        }
+
+        footer {
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        footer .page-number {
+            color: #919699;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        main .report-info {
+            margin: 2.1em 0;
+            color: #5E6366;
+        }
+
+        main .report-info p {
+            display: inline-block;
+            /* margin-bottom: 2.1em; */
+        }
+
+        main .report-info .filter-date {
+            float: left;
+        }
+
+        main .report-info .report-date {
+            float: right;
+        }
+
+        main .report-info .total-reservations .value {
+            font-weight: 600;
+        }
+
+        ::selection {
+            background: #f31544;
+            color: #FFF;
+        }
+
+        ::moz-selection {
+            background: #f31544;
+            color: #FFF;
+        }
+
+        /*????????*/
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .col-left {
+            display: inline-block;
+            text-align: left;
+            width: 29%;
+        }
+
+        .col-center {
+            display: inline-block;
+            text-align: center;
+            width: 40%;
+        }
+
+        .col-right {
+            display: inline-block;
+            text-align: right;
+            width: 29%;
+        }
+
+        /* h1 {
+            font-size: 1.5em;
+            color: #000000;
+        }
+
+        h2 {
+            font-size: .9em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            font-weight: 300;
+            line-height: 2em;
+        } */
+
+        p {
+            /* font-size: .75em; */
+            color: #666;
+            line-height: 1.2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #00a63f;
+        }
+
+        /*#invoiceholder{*/
+        /*    width:100%;*/
+        /*    height: 100%;*/
+        /*    padding: 50px 0;*/
+        /*}*/
+        #invoice {
+            position: relative;
+            margin: 0 auto;
+            padding: 10px;
+            /*width: 18cm;*/
+            background: #FFF;
+        }
+
+        /*[id*='invoice-']{ !* Targets all id with 'col-' *!*/
+        /*    !*  border-bottom: 1px solid #EEE;*!*/
+        /*    padding: 20px;*/
+        /*}*/
+        #invoice-top {
+            padding-top: 0.25cm;
+            padding-bottom: 0.25cm;
+        }
+
+        #invoice-mid {
+            padding-top: 0.25cm;
+        }
+
+        #invoice-bot {
+            padding-top: 3em;
+            min-height: 240px;
+        }
+
+        /*.info{*/
+        /*    display: inline-block;*/
+        /*    vertical-align: middle;*/
+        /*    margin-left: 20px;*/
+        /*}*/
+        /* .logo img, */
+        .clientlogo img {
+            width: 100%;
+        }
+
+        .clientlogo {
+            display: inline-block;
+            vertical-align: middle;
+            width: 50px;
+        }
+
+        .clientinfo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px
+        }
+
+        .title {
+            float: right;
+        }
+
+        .title p {
+            text-align: right;
+        }
+
+        #message {
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        .col-right td {
+            color: #666;
+            padding: 5px 8px;
+            border: 0;
+            font-size: 0.75em;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .col-right td label {
+            margin-left: 5px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .cta-group a {
+            display: inline-block;
+            padding: 7px;
+            border-radius: 4px;
+            background: rgb(196, 57, 10);
+            margin-right: 10px;
+            min-width: 100px;
+            text-align: center;
+            color: #fff;
+            font-size: 0.75em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+            /* font-size: 0.70em; */
+            text-align: left;
+        }
+
+        .cashier-info {
+            padding: 10px 10px 5px 0px;
+        }
+
+        .tabletitle th {
+            text-align: left;
+            border-bottom: 1px solid #000;
+        }
+
+        .total-row td {}
+
+        th {
+            /* font-size: 1em; */
+            text-align: left;
+            font-weight: bold;
+            padding: 5px 10px;
+            color: #000;
+        }
+
+        /*.item{width: 50%;}*/
+        .list-item td {
+            text-align: left;
+        }
+
+        .total-row th,
+        .total-row td {
+            text-align: right;
+            font-weight: 700;
+            font-size: 1em;
+            color: #000;
+        }
+
+        .list-group-item td {
+            font-weight: 700;
+            font-size: 1em;
+            color: #000;
+        }
+
+        table {
+            page-break-inside: audio
+        }
+
+        tr {
+            page-break-inside: audio;
+            page-break-after: audio
+        }
+
+        footer {
+            padding: 15px 20px;
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        .list-item:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .filter-left {
+            display: block;
+            margin-right: 10px;
+            font-style: italic;
+        }
+
+        .filter-right {
+            display: block;
+            position: absolute;
+        }
+
+        .footer-text {
+            color: #000;
+            /* font-size: 0.8em; */
+        }
+
+        /*.property-name {
+             font-family: 'Ahihi', serif;
+        }*/
+        .property-name {
+            color: #3A559F;
+            font-weight: bold;
+        }
+
+        .header-container {
+            display: table;
+            width: 100%;
+            height: auto;
+        }
+
+        .header-logo {
+            float: left;
+            width: 20%;
+        }
+
+        .header-logo img {
+            width: 8.9em;
+
+        }
+
+        .report-title {
+            float: left;
+            text-align: center;
+            line-height: 100px;
+            width: 60%;
+        }
+
+        .report-title h1 {
+            vertical-align: middle;
+        }
+
+        .report-date {
+            float: right;
+            width: 20%;
+            text-align: right;
+        }
+
+        .report-date div {
+          
+            padding-top: 65px;
+        }
+
+        .text {}
+
+        .title {
+            font-weight: bold;
+        }
+
+        .text-left {
+            text-align: left !important;
+        }
+
+        .text-right {
+            text-align: right !important;
+        }
+		.tabletitle th {
+          text-align: left;
+          border-bottom: 1px solid #000;
+       }
+       table tbody > tr:nth-child(odd) {
+            background-color:#eee;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+	
+	<div class="header-container">
+            <div class="header-logo">
+                <img th:src="${dataReport?.logo}" alt="Logo" />
+                <p class="property-name" th:text="${dataReport?.propertyName}">${dataReport?.propertyName}</p>
+            </div>
+            <div class="report-title">
+                <h1>ARRIVALS DETAILED</h1>
+            </div>
+            <div class="report-date">
+                <div>
+                    <span th:text="${dataReport?.reportDate}">reportDate</span>
+					<br/>
+                    <span th:text="${dataReport?.reportTime}">reportDate</span>				
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+	
+	<div>
+
+	
+		<table cellspacing="0" cellpadding="0">
+			
+            <thead>
+				<tr class="tabletitle">
+					<th style="width: 50px;">Room No.</th>       
+					<th style="width: 50px;">Name <br/> Confirmation No.</th>       
+					<th style="width: 65px;">VIP</th>
+					<th style="width: 70px;">Nationality<br/>Travel Agent<br/>Source<br/>Block Code</th>        
+					<th style="width: 45px;">Company</th>
+					<th style="width: 60px;">Arr. Date<br/>ETA</th>
+					<th style="width: 60px;">Dep. Date</th>
+					<th style="width: 45px;">Room Type</th>
+					<th style="width: 30px;">Adl.<br/>ETD</th>
+					<th style="width: 30px;">Chl.</th>
+					<th style="width: 45px;">Payment Mth.</th>
+					<th style="width: 45px;">Rate Code</th>
+					<th style="width: 45px;">Mkt code</th>
+					<th style="width: 45px;">Res. status</th>
+				</tr>			
+            </thead>
+			
+			
+            <tbody th:each="report_info:${dataReport?.data?.reportInfo}">
+					<tr>
+						<td colspan="2" style="text-align: left; font-weight: bold;" th:text="${report_info?.groupBy}">Group By</td>
+						<td colspan="12" style="text-align: left; font-weight: bold;" th:text="${report_info?.value}">value</td>
+					</tr>
+					<tr style="page-break-inside:avoid;" th:each="arrivalInfo:${report_info?.lstArrivalReportList}">
+						<td th:text="${arrivalInfo?.roomNumber}">roomNo</td>
+						<td>
+							<span th:text="${arrivalInfo?.guestName}"> </span>
+							<span th:text="${arrivalInfo?.confirmationNo}"> </span>
+						</td>
+						<td th:text="${arrivalInfo?.vipLevel}">vip</td>
+						<td>
+							<span th:text="${arrivalInfo?.nationality}"> </span>
+							<span th:text="${arrivalInfo?.travelAgent}"> </span>
+							<span th:text="${arrivalInfo?.sourceCode}"> </span>
+							<span th:text="${arrivalInfo?.groupCode}"> </span>
+						</td>
+						<td th:text="${arrivalInfo?.company}">companyTA</td>
+						<td>
+							<span th:text="${arrivalInfo?.arrivalDate}"> </span>
+							<span th:text="${arrivalInfo?.eta}"> </span>
+						</td>
+						<td th:text="${arrivalInfo?.departureDate}">
+							<span th:text="${arrivalInfo?.arrivalDate}"> </span>
+						</td>
+						<td th:text="${arrivalInfo?.roomType}">roomType</td>
+						<td th:text="${arrivalInfo?.numberOfAdult}">
+							<span th:text="${arrivalInfo?.numberOfAdult}"> </span>
+							<span th:text="${arrivalInfo?.etd}"> </span>
+						</td>
+						<td th:text="${arrivalInfo?.numberOfChild}">numberOfChild</td>
+						<td th:text="${arrivalInfo?.paymentMethodType}">paymentMethod</td>
+						<td th:text="${arrivalInfo?.rateCode}">rateCode</td>
+						<td th:text="${arrivalInfo?.marketCode}">marketCode</td>
+						<td th:text="${arrivalInfo?.reservationStatus}">reservationStatus</td>
+					</tr>					
+            </tbody>
+			<tfoot style="display: table-footer-group">
+				<tr>
+					<td colspan="2" style="font-weight: bold; font-size:1em; border-top:1px solid;">Arrival Date Total</td>
+					<td style="font-weight: bold; font-size:1em; border-top:1px solid;" th:text="${dataReport?.data?.summary?.totalArrived}">0</td>
+					<td colspan="5" style="font-weight: bold; font-size:1em; border-top:1px solid; text-align:right">Total</td>
+					<td style="font-weight: bold; font-size:1em; border-top:1px solid;" th:text="${dataReport?.data?.summary?.totalAdult}">0</td>
+					<td colspan="7" style="font-weight: bold; font-size:1em; border-top:1px solid;" th:text="${dataReport?.data?.summary?.totalChild}">0</td>
+					
+				</tr>
+            </tfoot>
+        </table>
+	</div>
+		     
+    </main>
+	
+
+		<div>
+			<div style="left:30px; text-align: left; border: none;">
+				<table style="margin-top:30px">
+					<tr>
+						<td  rowspan="5" style="text-align: left; font-weight: bold;">Filter</td>
+					</tr>
+					<tr>
+					<td>
+						<span th:text="'From Date: '+ ${dataReport?.filter?.fromDate}+ ' To Date ' + ${dataReport?.filter?.toDate}"> from date - to date </span>							
+						<span th:text="'Bussiness Date '+ ${dataReport?.businesDate}">Bussiness Date</span>						
+						<span th:if="${dataReport?.filter?.roomTypeCodes != null}" th:text="'Room Types: '+ ${dataReport?.filter?.roomTypeCodes}"></span>							
+						<span th:if="${dataReport?.filter?.marketCodes != null}" th:text="'Market Code: '+ ${dataReport?.filter?.marketCodes}"></span>
+						<span th:if="${dataReport?.filter?.sourceCodes != null}" th:text="'Source: '+ ${dataReport?.filter?.sourceCodes}"></span>		
+						<span th:if="${dataReport?.filter?.etaTo != null}" th:text="'From Arrival Time: '+ ${dataReport?.filter?.etaTo}"></span>	
+						<span th:if="${dataReport?.filter?.etaFrom != null}" th:text="'To Arrival Time: '+ ${dataReport?.filter?.etaFrom}"></span>													
+					</td>	
+
+					<td style="text-align:right">
+					<span th:text="${dataReport?.username}">reportDate</span>
+					</td>					
+					</tr>	
+				</table>                
+            </div>
+		</div>  
+	
+</div>
+
+ 
+</body>
+
+
+
+
+
+</html>
+}">paymentMethod</td>
 						<td th:text="${arrivalInfo?.rateCode}">rateCode</td>
 						<td th:text="${arrivalInfo?.marketCode}">marketCode</td>
 						<td th:text="${arrivalInfo?.reservationStatus}">reservationStatus</td>
