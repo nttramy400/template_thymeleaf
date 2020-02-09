@@ -452,8 +452,6 @@
                     <span th:text="${dataReport?.reportDate}">reportDate</span>
 					<br/>
                     <span th:text="${dataReport?.reportTime}">reportDate</span>
-					<br/>
-					<span th:text="${dataReport?.username}">username</span>
                 </div>
 
             </div>
@@ -503,16 +501,31 @@
             </tbody>
         </table>
     </main>
-		<div>
-                <div >
-                    <div class="filter-date" style=" position: fixed; bottom: 5px; left:30px; background-color: white; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
-      + ' - ' + ${toDateFormat}">
-                        Filter: 01/06/19 - 09/06/19
-                    </div>
+	
+	<div>
+			<div style="left:30px; text-align: left; border: none;">
+				<table style="margin-top:30px">
+					<tr>
+						<td style="width:30px" rowspan="5" style="text-align: left; font-weight: bold;">Filter</td>
+					</tr>
+					<tr>
+					<td>
+						<span th:text="'From Date: '+ ${fromDateFormat}+ ' To Date ' + ${toDateFormat}"> from date - to date </span>							
+						<span th:text="'Bussiness Date '+ ${dataReport?.businesDate}">Bussiness Date</span>						
+						<span th:if="${dataReport?.filter?.roomTypeCodes != null}" th:text="'Room Types: '+ ${dataReport?.filter?.roomTypeCodes}"></span>							
+						<span th:if="${dataReport?.filter?.marketCodes != null}" th:text="'Market Code: '+ ${dataReport?.filter?.marketCodes}"></span>
+						<span th:if="${dataReport?.filter?.sourceCodes != null}" th:text="'Source: '+ ${dataReport?.filter?.sourceCodes}"></span>		
+						<span th:if="${dataReport?.filter?.etaTo != null}" th:text="'From Arrival Time: '+ ${dataReport?.filter?.etaTo}"></span>	
+						<span th:if="${dataReport?.filter?.etaFrom != null}" th:text="'To Arrival Time: '+ ${dataReport?.filter?.etaFrom}"></span>													
+					</td>	
+
+					<td style="text-align:right">
+					<span th:text="${username}">user name</span>
+					</td>					
+					</tr>	
+				</table>                
             </div>
-		</div>
-</div>
-  
+		</div>   
 	
 </body>
 </html>
