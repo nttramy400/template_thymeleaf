@@ -444,8 +444,8 @@
                 <img src="${logo}" alt="Logo" />
                 <p class="property-name" th:text="${propertyName}">${propertyName}</p>
             </div>
-            <div class="report-title">
-                <h1>VIP</h1>
+            <div>
+                <h1 class="page-title">VIP</h1>
             </div>
             <div class="report-date">
                 <div>
@@ -490,14 +490,24 @@
             </tbody>
         </table>
     </main>
-		<div>
-                <div >
-                    <div class="filter-date" style=" position: fixed; bottom: 5px; left:30px; background-color: white; border: none; display: inline;" th:text="'Filter: ' + ${fromDateFormat}
-      + ' - ' + ${toDateFormat}">
-                        Filter: 01/06/19 - 09/06/19
-                    </div>
+	<div>
+			<div style="left:30px; text-align: left; border: none;">
+				<table style="margin-top:30px">
+					<tr>
+						<td rowspan="5" style="width:30px; text-align: left; font-weight: bold;">Filter</td>
+					</tr>
+					<tr>
+					<td>
+						<span th:text="'From Date: '+ ${fromDateFormat}+ ' To Date ' + ${toDateFormat}"> from date - to date </span>																		
+					</td>	
+
+					<td style="text-align:right">
+					<span th:text="${username}">user name</span>
+					</td>					
+					</tr>	
+				</table>                
             </div>
-		</div>
+		</div>  
 </div>
   
 	
