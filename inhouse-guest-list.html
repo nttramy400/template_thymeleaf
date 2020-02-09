@@ -499,15 +499,21 @@
             </tbody>
         </table>
 	</div>
-    <div>
-        <div >
-            <div class="filter-date" style="position: fixed; bottom: 5px; left:30px; background-color: white; text-align: right; padding: 0px; border: none; display: inline;" th:text="'Filter: '">
-
+<div>
+            <div style="left:30px; text-align: right;">
+                <table style="margin-top:30px">
+                    <tr></tr>
+                    <tr>
+                        <td>
+                            <span th:text="Filter:"></span>
+                        </td>   
+                        <td style="text-align:right">
+                            <span th:text="${username}">reportDate</span>
+                        </td>
+                    </tr>                     
+                </table>
             </div>
-            <div class="filter-date" style="position: fixed; bottom: 5px; right:30px; background-color: white; text-align: left; padding: 0px; border: none; display: inline;" th:text="${userName}">
-            </div>
-        </div>
-    </div>       
+        </div>     
     </main>
 </div>
 </body>

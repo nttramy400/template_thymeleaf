@@ -542,7 +542,7 @@
 			<div style="left:30px; text-align: right; border: none;">
 				<table style="margin-top:30px">
 					<tr>
-						<td  rowspan="5" style="text-align: left; font-weight: bold;">Filter</td>
+						<td  rowspan="5" style="width:30px; text-align: left; font-weight: bold;">Filter</td>
 					</tr>
 					<tr>
 					<td>
